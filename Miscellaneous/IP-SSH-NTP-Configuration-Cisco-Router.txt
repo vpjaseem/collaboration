@@ -1,0 +1,26 @@
+!
+hostname cube01
+enable secret Ajcollab1@
+username admin password 7 Ajcollab1@
+!
+interface GigabitEthernet1
+ip address 192.168.31.1 255.255.224.0
+no shut
+!
+ip domain name ajcollab.com
+ip name-server 192.168.11.1
+ip name-server 192.168.0.1
+!
+crypto key generate rsa
+ip ssh version 2
+!
+line vty 0 4
+login local
+transport input all
+!
+ntp server time.google.com
+ntp master 2
+ntp source gigabitEthernet 1
+!
+clock timezone IST +5 30
+!
