@@ -12,9 +12,14 @@ w32tm /query /status
 w32tm /monitor
 ~~~~~~~~~~~~~~~~~~~~~~~
 Working
- net stop w32time
- w32tm /config /syncfromflags:manual /manualpeerlist:0.time.google.com
- w32tm /config /reliable:yes
- net start w32time
- w32tm /query /configuration
- w32tm /query /status
+
+w32tm /config /manualpeerlist:time.google.com,0x8 /syncfromflags:manual /reliable:yes /update
+w32tm /resync /rediscover
+net stop w32time && net start w32time
+
+net stop w32time
+w32tm /config /syncfromflags:manual /manualpeerlist:0.time.google.com
+w32tm /config /reliable:yes
+net start w32time
+w32tm /query /configuration
+w32tm /query /status
