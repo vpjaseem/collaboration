@@ -4,9 +4,9 @@ voice service voip
  mode border-element
  allow-connections sip to sip
  ip address trusted list
-  ipv4 172.16.11.11
-  ipv4 172.16.11.12
-  ipv4 172.16.11.13
+  ipv4 172.16.101.21
+  ipv4 172.16.101.22
+  ipv4 172.16.101.23
   ipv4 192.168.0.2
 !
 
