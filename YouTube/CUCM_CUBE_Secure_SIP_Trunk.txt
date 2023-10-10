@@ -165,7 +165,8 @@ crypto pki authenticate BALTOMORE-MICROSOFT-CA
 -----BEGIN CERTIFICATE-----
 Paste the base 64 encoded BALTOMORE certificate  content here
 -----END CERTIFICATE-----
-!
+!! You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
+
 crypto pki trustpoint DIGICERT-MICROSOFT-CA
 enrollment terminal
 revocation-check none
@@ -175,6 +176,7 @@ crypto pki authenticate DIGICERT-MICROSOFT-CA
 -----BEGIN CERTIFICATE-----
 Paste the base 64 encoded DIGICERT certificate  content here
 -----END CERTIFICATE-----
+!!You can download DIGICERT certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !
