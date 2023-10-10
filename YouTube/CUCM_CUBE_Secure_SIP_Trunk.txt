@@ -1,1 +1,182 @@
-Test
+!! CUBE Global Configurations !!
+!
+voice service voip
+ mode border-element
+ allow-connections sip to sip
+ ip address trusted list
+  ipv4 172.16.11.11
+  ipv4 172.16.11.12
+  ipv4 172.16.11.13
+  ipv4 192.168.0.2
+!
+
+!! CCM Node IPs, Used for matching Inbound Call from CUCM to CUBE !!
+!
+voice class uri CUCM sip
+ host ipv4:172.16.101.22
+ host ipv4:172.16.101.23
+!
+
+!! Codec List !!
+!         
+voice class codec 1
+ codec preference 1 g711alaw
+ codec preference 2 g711ulaw
+ codec preference 3 g729r8
+ codec preference 4 g729br8       
+!
+
+!! CCM Node IPs, Used sanding the call to CUCM Nodes !!
+!         
+voice class server-group 1
+ ipv4 172.16.101.22
+ ipv4 172.16.101.23
+ description CUCM-SERVERS
+!
+
+!! MS Teams Number Patterns !!
+!
+voice class e164-pattern-map 102
+  e164 +12176467525
+!
+dial-peer voice 101 voip
+ description CALL-FROM-CUCM-TO-CUBE
+ session protocol sipv2
+ incoming uri via CUCM
+ voice-class codec 1  
+ voice-class sip bind control source-interface GigabitEthernet0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0
+ dtmf-relay rtp-nte
+ srtp fallback
+ no vad
+!
+dial-peer voice 102 voip
+ description CALL FROM CUBE TO MS TEAMS 
+ preference 1
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ session target dns:sip.pstnhub.microsoft.com:5061
+ destination e164-pattern-map 102
+ voice-class codec 1  
+ voice-class sip srtp negotiate cisco
+ voice-class sip tenant 200
+ voice-class sip options-keepalive profile 200
+ dtmf-relay rtp-nte
+ srtp fallback
+ fax protocol none
+ no vad
+!
+dial-peer voice 103 voip
+ description CALL FROM MSTEAMS TO CUBE 
+ translation-profile incoming 200
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ incoming uri to 290
+ voice-class codec 1  
+ voice-class sip tenant 200
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+dial-peer voice 104 voip
+ description CALL FROM CUBE TO CUCM
+ destination-pattern .T
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ session server-group 1
+ voice-class codec 1  
+ dtmf-relay rtp-nte
+ srtp fallback
+ no vad
+!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Certificate Management !!
+!
+crypto key zeroize rsa
+ip domain name ajcollab.com
+!
+
+!! Generate Key Pair!! 
+
+crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
+
+!! Create Trust Store, this will store Identity certificate and bundle of Intermediate and Root CAs !!
+
+crypto pki trustpoint SBC-CERT-STORE
+ enrollment terminal
+ fqdn sbc.ajcollab.com 
+ subject-name cn=sbc.ajcollab.com,OU=Collab,O=AJ Collab
+ subject-alt-name sbc.ajcollab.com
+ serial-number none
+ ip-address non
+ revocation-check none
+ rsakeypair SBC-RSA-KEY
+
+!! Generate CSR, will display the CSR in the terminal. Copy and send to CA!!
+!
+crypto pki enroll SBC-CERT-STORE
+!
+
+!! Authenticate the Identity certificate with bundle of Intermediate and Root CAs !!
+
+crypto pki authenticate SBC-CERT-STORE
+
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded bundle of Intermediate and Root CAs as single.
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-----END CERTIFICATE-----
+
+!! Import identity certificate !!
+
+crypto pki import SBC-CERT-STORE certificate
+
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded Identity certificate  content here
+-----END CERTIFICATE-----
+
+!! Enterprise CA Certificate Trust Store, Used to store the Internal CA Trust Relation !!
+!
+crypto pki trustpoint ENTERPRISE-CA
+enrollment terminal
+revocation-check none
+!
+crypto pki authenticate ENTERPRISE-CA
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded BLK Collab CA certificate  content here
+-----END CERTIFICATE-----
+!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! For Implementing Microsft Teams Direct Routing !!
+!
+crypto pki trustpoint BALTOMORE-MICROSOFT-CA
+enrollment terminal
+revocation-check none
+!
+crypto pki authenticate BALTOMORE-MICROSOFT-CA
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded BALTOMORE certificate  content here
+-----END CERTIFICATE-----
+!
+crypto pki trustpoint DIGICERT-MICROSOFT-CA
+enrollment terminal
+revocation-check none
+!
+crypto pki authenticate DIGICERT-MICROSOFT-CA
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded DIGICERT certificate  content here
+-----END CERTIFICATE-----
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!
+show crypto pki certificates
+!
