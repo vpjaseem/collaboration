@@ -99,13 +99,13 @@ dial-peer voice 104 voip
 !! Certificate Management !!
 !
 crypto key zeroize rsa
-ip ssh rsa keypair-name SBC-RSA-KEY
 ip domain name ajcollab.com
 !
 
 !! Generate Key Pair!! 
 
 crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
+ip ssh rsa keypair-name SBC-RSA-KEY
 
 !! Create Trust Store, this will store Identity certificate and bundle of Intermediate and Root CAs !!
 
