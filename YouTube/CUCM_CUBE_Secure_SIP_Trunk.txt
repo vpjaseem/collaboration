@@ -17,6 +17,11 @@ voice class uri CUCM sip
  host ipv4:172.16.101.23
 !
 
+!! Incoming call from Teams via SBC will have sbc.ajcollab.com as the domain name !!
+voice class uri 290 sip
+ host sbc.ajcollab.com
+!
+
 !! Codec List !!
 !         
 voice class codec 1
