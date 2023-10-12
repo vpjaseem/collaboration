@@ -99,6 +99,7 @@ dial-peer voice 104 voip
 !! Certificate Management !!
 !
 crypto key zeroize rsa
+ip ssh rsa keypair-name SBC-RSA-KEY
 ip domain name ajcollab.com
 !
 
