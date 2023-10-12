@@ -52,7 +52,7 @@ dial-peer voice 101 voip
  voice-class sip bind control source-interface GigabitEthernet0/0
  voice-class sip bind media source-interface GigabitEthernet0/0
  dtmf-relay rtp-nte
- srtp fallback
+ srtp
  no vad
 !
 dial-peer voice 102 voip
@@ -67,7 +67,7 @@ dial-peer voice 102 voip
  voice-class sip tenant 200
  voice-class sip options-keepalive profile 200
  dtmf-relay rtp-nte
- srtp fallback
+ srtp
  fax protocol none
  no vad
 !
@@ -91,7 +91,7 @@ dial-peer voice 104 voip
  session server-group 1
  voice-class codec 1  
  dtmf-relay rtp-nte
- srtp fallback
+ srtp
  no vad
 !
 
