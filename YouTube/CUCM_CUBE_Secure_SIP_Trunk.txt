@@ -185,6 +185,10 @@ Paste the base 64 encoded DIGICERT certificate  content here
 !!You can download DIGICERT certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+!! Point Trust Store for SIP Traffic !!
+sip-ua 
+crypto signaling default trustpoint SBC-CERT-STORE
+!
 !
 show crypto pki certificates
 !
