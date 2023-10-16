@@ -12,6 +12,7 @@ Join us for a comprehensive exploration of how to bridge the gap between these t
 - Knowledge of CUBE (Dial-Peers, SIP)
 - Basic understanding of SSL Certificates and how to use them in Cisco Routers - [Reference](https://youtu.be/8pUtDOTw-HM)
 - Knowledge of Microsoft 365 Admin Center and MS Teams Admin Center
+- Basic understanding of Microsoft Direct Routing (Theoretical knowledge is enough)
 - Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
 
 ## Configuration Steps
