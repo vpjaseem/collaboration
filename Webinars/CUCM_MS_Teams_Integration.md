@@ -3,12 +3,16 @@ Unlocking Seamless Communication in the Modern Workplace
 In today's fast-paced business world, effective communication and collaboration are the cornerstones of success. As organizations seek to empower their teams and connect with customers across the globe, the intersection of technologies becomes pivotal. That's where this webinar comes in – a deep dive into the integration of two giants in the communication and collaboration space, **Cisco Unified Communications Manager (CUCM)** and **Microsoft Teams**, facilitated by **Cisco CUBE** with **Direct Routing fature**...!
 
 Join us for a comprehensive exploration of how to bridge the gap between these two industry leaders, enhancing your ability to connect, communicate, and collaborate with unparalleled efficiency. Our webinar will cover everything you need to know about bringing the power of Microsoft Teams into the Cisco Unified Communications environment, leveraging the robust capabilities of Cisco CUBE as the bridge.
+## Lab Topology
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/23199b62-80d2-4612-b7c5-1882ed5c5e14)
+
 
 ## Prerequisites
 - Basic understanding of CUCM, IP Phone Registration, SIP Trunking
 - Knowledge of CUBE (Dial-Peers, SIP)
-- Basic understanding of SSL Certificates and how to use them in Cisco Routers
+- Basic understanding of SSL Certificates and how to use them in Cisco Routers - [Reference](https://youtu.be/8pUtDOTw-HM)
 - Knowledge of Microsoft 365 Admin Center and MS Teams Admin Center
+- Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
 
 ## Configuration Steps
 1. Overview of Lab Topology and final goal
