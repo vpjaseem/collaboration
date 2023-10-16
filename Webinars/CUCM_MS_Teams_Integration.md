@@ -13,6 +13,11 @@ The session will be conducted via Zoom Meeting Platform, I Strongly recomend to 
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/23199b62-80d2-4612-b7c5-1882ed5c5e14)
 
+- CUCM 14 SU3 (14.0.1.13900-155)
+- CUBE / IOS
+- Teams App
+- IP Phones
+
 ## Class Whiteboard Link
 The contents and drawings we disucssed in the session will be available here.
 - Whiteboard [Link](https://wbd.ms/share/v2/aHR0cHM6Ly93aGl0ZWJvYXJkLm1pY3Jvc29mdC5jb20vYXBpL3YxLjAvd2hpdGVib2FyZHMvcmVkZWVtL2IyNjRmYTdhYjgzZTQwM2FhYWQ5ZTMwZDM5ZTUyNTQ5X0JCQTcxNzYyLTEyRTAtNDJFMS1CMzI0LTVCMTMxRjQyNEUzRF9iMzFmOTRhZC1iZTEzLTQxZmUtYjQ2Ny03OWQwOTVmNDRhMWQ=)
