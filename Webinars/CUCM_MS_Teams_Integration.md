@@ -50,12 +50,19 @@ These are some helpful links for your references.
 - [CUBE SSL Certificate Installation Process](https://youtu.be/8pUtDOTw-HM)
 - How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
 
-## Courses offers by AJ Labs
+## About Me
+Abdul Jaseem, UC Architect and Corporate Trainer
+- Lean a new thing everyday
+- From Karuvarakundu
+- Love driving
+- Mob: +91-859-0101-859 ([WhatsApp Preffered](https://wa.me/+918590101859))<br>
+- [LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
+
+
+## Courses offered by AJ Labs
 - **Cloud Collaboration Video Training** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) 
 - **Advanced Cisco Collaboration Video Training** (vmware, Windows, CUCM, CUC, IMP, Expressway, UC Upgrade, MRA, B2B, Webex) - [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Advanced%20Cisco%20Collaboration%20Syllabus.pdf) | [Free eBook](https://drive.google.com/file/d/15pI_tyxAFgSUHW8Qb9PuwGxCKUsSR4EM/view?usp=sharing)
 - **Cloud Contact Center Training Live Training** (Basics of AWS, Genesys Cloud CX, Amazon Conant, Webex Contact Center) - **15/April/2023** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
 
-## Connect Me
-Abdul Jaseem <br>
-Mob: +91-859-0101-859 ([WhatsApp Preffered](https://wa.me/+918590101859))<br>
-[LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
+
+
