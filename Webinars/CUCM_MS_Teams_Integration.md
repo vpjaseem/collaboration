@@ -51,10 +51,13 @@ These are some helpful links for your references.
 - How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
 
 ## About Me
-Abdul Jaseem, UC Architect and Corporate Trainer
-- Lean a new thing everyday
-- From Karuvarakundu
-- Love driving
+**Abdul Jaseem**, UC Architect and Corporate Trainer
+- Got in to Networking & Collaboration due to not being able to get a job in Embedded Systems :)
+- Lean at least a new thing everyday
+- From Karuvarakundu, Kerala, India
+- Passionate about cars and driving
+- Skills: Cisco UC, Microsft UC, Genesys Cloud CX, Amazon Conenct, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
+- Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, CKA
 - Mob: +91-859-0101-859 ([WhatsApp Preffered](https://wa.me/+918590101859))<br>
 - [LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
 
