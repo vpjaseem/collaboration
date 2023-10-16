@@ -4,22 +4,28 @@ In today's fast-paced business world, effective communication and collaboration 
 
 Join us for a comprehensive exploration of how to bridge the gap between these two industry leaders, enhancing your ability to connect, communicate, and collaborate with unparalleled efficiency. Our webinar will cover everything you need to know about bringing the power of Microsoft Teams into the Cisco Unified Communications environment, leveraging the robust capabilities of Cisco CUBE as the bridge.
 
+## Prerequisites
+- Basic understanding of CUCM, IP Phone Registration, SIP Trunking
+- Knowledge of CUBE (Dial-Peers, SIP)
+- Basic understanding of SSL Certificates and how to use them in Cisco Routers
+- Knowledge of Microsoft 365 Admin Center and MS Teams Admin Center
+
 ## Configuration Steps
 1. Overview of Lab Topology and final goal
 2. Review of CUCM Current Setup
 3. Review of Microsoft Teams Current Setup and Licenses
 4. Configure CUBE in CUCM (SIP Trunk Sec Profile, SIP Profile, Adding Trunk, Dial Plan)
 5. CLI Voice Configuration for CUBE to integrate with CUCM (Voice Service VoIP, Trust List, Dial-Peers, etc.)
-6. Installing Publcic SSL Certificate in CUBE
+6. Installing Public SSL Certificate in CUBE
 7. Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port)
 8. Microsoft Teams Direct Routing configurations (Voice Route, PSTN Usage Record, Voice Routing Policy)
 9. CLI Voice Configuration for CUBE to integrate with MS TEams (Voice Service VoIP, SIP Profiles Manipulations, Dial-Peers)
 10. Test calls between CUCM and MS Teams
-11. Simutanious Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
+11. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
 
 ## CUBE Configuration
 ```
-CUBE Configuaratiosn here
+CUBE Configurations here
 ```
 
 ## Helpful Links
