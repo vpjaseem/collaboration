@@ -11,12 +11,19 @@ Join us for a comprehensive exploration of how to bridge the gap between these t
 The session will be conducted via Zoom Meeting Platform, I Strongly recomend to **install Zoom App** for the smooth experience.
 
 ## Lab Topology
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/23199b62-80d2-4612-b7c5-1882ed5c5e14)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/41080b85-0353-4227-9e76-b76674020260)
 
 - CUCM 14 SU3 (14.0.1.13900-155)
 - CUBE - Cisco 2901 IOS Version 15.7(3)M8
 - Teams App
 - IP Phones
+- [Godaddy Domain](https://www.godaddy.com/en-in) '**ajcollab.com**'
+- Free SSl Certificate from [ZeroSSL](https://zerossl.com) or [NameCheap SSL](https://www.namecheap.com/security/ssl-certificates/comodo/positivessl/)
+- [Microsoft 365 Admin Center](https://admin.microsoft.com/)
+- [Teams Admin Center](https://admin.teams.microsoft.com/)
+- MS Teams Root Certificate Authorities - [Baltimore CyberTrust Root](https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer) | [DigiCert Global Root G2](https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer) 
+- 
+
 
 ## Class Whiteboard Link
 The contents and drawings we disucssed in the session will be available here.
