@@ -57,7 +57,7 @@ Paste the base 64 encoded Identity certificate  content here
 -----END CERTIFICATE-----
 !
 
-!! Vide the Certificates !!
+!! View the Certificates !!
 !
 show crypto pki certificates
 !
