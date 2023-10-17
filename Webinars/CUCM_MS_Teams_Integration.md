@@ -10,6 +10,14 @@ Join us for a comprehensive exploration of how to bridge the gap between these t
 
 The session will be conducted via Zoom Meeting Platform, I Strongly recomend to **install Zoom App** for the smooth experience.
 
+## Prerequisites
+- Basic understanding of CUCM, IP Phone Registration, SIP Trunking
+- Knowledge of CUBE (Dial-Peers, SIP)
+- Basic understanding of SSL Certificates and how to use them in Cisco Routers - [Reference](https://youtu.be/8pUtDOTw-HM)
+- Knowledge of Microsoft 365 Admin Center and MS Teams Admin Center
+- Basic understanding of Microsoft Direct Routing (Theoretical knowledge is enough)
+- Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
+- Strongly recomend to install Zoom App for the smooth experience 
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/d813790e-c69d-47d7-a05b-2edf63fa0837)
 
@@ -28,15 +36,6 @@ The session will be conducted via Zoom Meeting Platform, I Strongly recomend to 
 ## Class Whiteboard Link
 The contents and drawings we disucssed in the session will be available here.
 - Whiteboard [Link]([https://wbd.ms/share/v2/aHR0cHM6Ly93aGl0ZWJvYXJkLm1pY3Jvc29mdC5jb20vYXBpL3YxLjAvd2hpdGVib2FyZHMvcmVkZWVtL2IyNjRmYTdhYjgzZTQwM2FhYWQ5ZTMwZDM5ZTUyNTQ5X0JCQTcxNzYyLTEyRTAtNDJFMS1CMzI0LTVCMTMxRjQyNEUzRF9iMzFmOTRhZC1iZTEzLTQxZmUtYjQ2Ny03OWQwOTVmNDRhMWQ=](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS))
-
-## Prerequisites
-- Basic understanding of CUCM, IP Phone Registration, SIP Trunking
-- Knowledge of CUBE (Dial-Peers, SIP)
-- Basic understanding of SSL Certificates and how to use them in Cisco Routers - [Reference](https://youtu.be/8pUtDOTw-HM)
-- Knowledge of Microsoft 365 Admin Center and MS Teams Admin Center
-- Basic understanding of Microsoft Direct Routing (Theoretical knowledge is enough)
-- Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
-- Strongly recomend to install Zoom App for the smooth experience 
 
 ## Configuration Steps
 1. Overview of Lab Topology and final goal
