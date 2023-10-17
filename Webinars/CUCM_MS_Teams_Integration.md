@@ -14,7 +14,7 @@ The session will be conducted via Zoom Meeting Platform, I Strongly recomend to 
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/23199b62-80d2-4612-b7c5-1882ed5c5e14)
 
 - CUCM 14 SU3 (14.0.1.13900-155)
-- CUBE / IOS
+- CUBE - Cisco 2901 IOS Version 15.7(3)M8
 - Teams App
 - IP Phones
 
