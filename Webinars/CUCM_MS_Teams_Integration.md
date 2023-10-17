@@ -11,7 +11,7 @@ Join us for a comprehensive exploration of how to bridge the gap between these t
 The session will be conducted via Zoom Meeting Platform, I Strongly recomend to **install Zoom App** for the smooth experience.
 
 ## Lab Topology
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/41080b85-0353-4227-9e76-b76674020260)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/d813790e-c69d-47d7-a05b-2edf63fa0837)
 
 - CUCM 14 SU3 (14.0.1.13900-155)
 - CUBE - Cisco 2901 IOS Version 15.7(3)M8
