@@ -10,6 +10,10 @@ Join us for a comprehensive exploration of how to bridge the gap between these t
 
 The session will be conducted via Zoom Meeting Platform, I Strongly recomend to **install Zoom App** for the smooth experience.
 
+## Class Whiteboard Link
+The contents and drawings we disucssed in the session will be available here.
+- Whiteboard [Link](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS)
+
 ## Prerequisites
 - Basic understanding of CUCM, IP Phone Registration, SIP Trunking
 - Knowledge of CUBE (Dial-Peers, SIP)
@@ -18,22 +22,26 @@ The session will be conducted via Zoom Meeting Platform, I Strongly recomend to 
 - Basic understanding of Microsoft Direct Routing (Theoretical knowledge is enough)
 - Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
 - Strongly recomend to install Zoom App for the smooth experience 
+
+## Helpful Links
+These are some helpful links for your references. 
+- [CUCM - CUBE Secure SIP Trunking, Mixed Mode, CTL CAPF](https://youtu.be/d6gZiEG2bMw)
+- [CUBE SSL Certificate Installation Process](https://youtu.be/8pUtDOTw-HM)
+- How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
+- How to build your own Microsoft UC Lab - Complete guide to Developer Cloud tenant [Step by Step Guide]()
+
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/d813790e-c69d-47d7-a05b-2edf63fa0837)
 
 - CUCM 14 SU3 (14.0.1.13900-155)
 - CUBE - Cisco 2901 IOS Version 15.7(3)M8
 - Teams App
-- IP Phones
+- Cisco IP Phones 8865, 9971
 - [Godaddy Domain](https://www.godaddy.com/en-in) '**ajcollab.com**'
 - Free SSl Certificate from [ZeroSSL](https://zerossl.com) or [NameCheap SSL](https://www.namecheap.com/security/ssl-certificates/comodo/positivessl/)
 - [Microsoft 365 Admin Center](https://admin.microsoft.com/)
 - [Teams Admin Center](https://admin.teams.microsoft.com/)
 - MS Teams Root Certificate Authorities - [Baltimore CyberTrust Root](https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer) | [DigiCert Global Root G2](https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer) 
-
-## Class Whiteboard Link
-The contents and drawings we disucssed in the session will be available here.
-- Whiteboard [Link](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS)
 
 ## Configuration Steps
 1. Overview of Lab Topology and final goal
@@ -431,22 +439,14 @@ Paste the base 64 encoded BLK Collab CA certificate  content here
 show crypto pki certificates
 show crypto key mypubkey rsa
 show sip-ua calls
-
-
 ```
-
-## Helpful Links
-These are some helpful links for your references. 
-- [CUCM - CUBE Secure SIP Trunking, Mixed Mode, CTL CAPF](https://youtu.be/d6gZiEG2bMw)
-- [CUBE SSL Certificate Installation Process](https://youtu.be/8pUtDOTw-HM)
-- How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
 - Got in to Networking & Collaboration due to not being able to get a job in Embedded Systems :)
 - Lean at least a new thing everyday
 - From Karuvarakundu, Kerala, India
-- Passionate about cars and driving
+- Passionate about Technology, cars and driving
 - Skills: Cisco UC, Microsft UC, Genesys Cloud CX, Amazon Conenct, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
 - Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, CKA
 - Mob: +91-859-0101-859 ([WhatsApp Preffered](https://wa.me/+918590101859))<br>
