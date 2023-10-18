@@ -50,7 +50,389 @@ The contents and drawings we disucssed in the session will be available here.
 
 ## CUBE Configuration
 ```
-CUBE Configurations here
+!!!!!!!!!! PART 1 !!!!!!!!!!
+!! Manipulations for outbound messages to MS Teams
+!
+voice class sip-profiles 200
+ rule 10 request ANY sip-header Contact modify "@.*:" "@sbc.ajcollab.com:" 
+ rule 20 response ANY sip-header Contact modify "@.*:" "@sbc.ajcollab.com:" 
+ rule 30 request ANY sip-header SIP-Req-URI modify "sip:(.*):5061 (.*)" "sip:\1:5061;user=phone \2" 
+ rule 40 request ANY sip-header User-Agent modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 50 response ANY sip-header Server modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 60 request ANY sdp-header Audio-Attribute modify "a=sendonly" "a=inactive" 
+ rule 70 response 200 sdp-header Audio-Connection-Info modify "0.0.0.0" "103.94.138.238" 
+ rule 71 response ANY sdp-header Connection-Info modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+ rule 72 response ANY sdp-header Audio-Connection-Info modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+ rule 73 request ANY sdp-header Connection-Info modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+ rule 74 request ANY sdp-header Audio-Connection-Info modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+ rule 80 request ANY sdp-header Audio-Attribute modify "(a=crypto:.*inline:[A-Za-z0-9+/=]+)" "\1|2^31" 
+ rule 90 response ANY sdp-header Audio-Attribute modify "(a=crypto:.*inline:[A-Za-z0-9+/=]+)" "\1|2^31" 
+ rule 100 request ANY sdp-header Audio-Attribute modify "a=candidate.*" "a=label:main-audio" 
+ rule 110 response ANY sdp-header Audio-Attribute modify "a=candidate.*" "a=label:main-audio" 
+ rule 120 response 486 sip-header Reason modify "cause=34;" "cause=17;" 
+ rule 300 response ANY sdp-header Audio-Attribute modify "a=rtcp:(.*) IN IP4 192.168.0.11" "a=rtcp:\1 IN IP4 103.94.138.238" 
+ rule 310 request ANY sdp-header Audio-Attribute modify "a=rtcp:(.*) IN IP4 192.168.0.11" "a=rtcp:\1 IN IP4 103.94.138.238" 
+ rule 320 response ANY sdp-header Audio-Attribute modify "a=candidate:1 1(.*) 192.168.0.11 (.*)" "a=candidate:1 1\1 103.94.138.238 \2" 
+ rule 330 request ANY sdp-header Audio-Attribute modify "a=candidate:1 1(.*) 192.168.0.11 (.*)" "a=candidate:1 1\1 103.94.138.238 \2" 
+ rule 340 response ANY sdp-header Audio-Attribute modify "a=candidate:1 2(.*) 192.168.0.11 (.*)" "a=candidate:1 2\1 103.94.138.238 \2" 
+ rule 350 request ANY sdp-header Audio-Attribute modify "a=candidate:1 2(.*) 192.168.0.11 (.*)" "a=candidate:1 2\1 103.94.138.238 \2" 
+!
+
+!! Manipulations for inbound messages from MS Teams
+!
+voice class sip-profiles 290
+ rule 10 request REFER sip-header From copy "@(.*com)" u05 
+ rule 15 request REFER sip-header From copy "sip:(sip.*com)" u05 
+ rule 20 request REFER sip-header Refer-To modify "sip:\+(.*)@.*:5061" "sip:+AAA\1@\u05:5061" 
+ rule 30 request REFER sip-header Refer-To modify "<sip:sip.*:5061" "<sip:+AAA@\u05:5061" 
+ rule 40 response ANY sip-header Server modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 50 request ANY sdp-header Audio-Attribute modify "a=ice-.*" "a=label:main-audio" 
+ rule 60 request ANY sdp-header Attribute modify "a=ice-.*" "a=label:main-audio" 
+ rule 70 response ANY sdp-header Audio-Attribute modify "IN IP4 103.94.138.238" "IN IP4 192.168.0.11" 
+ rule 80 request ANY sdp-header Connection-Info modify "IN IP4 103.94.138.238" "IN IP4 192.168.0.11" 
+ rule 90 response ANY sdp-header Audio-Attribute modify "IN IP4 103.94.138.238" "IN IP4 192.168.0.11" 
+ rule 100 response ANY sdp-header Connection-Info modify "IN IP4 103.94.138.238" "IN IP4 192.168.0.11" 
+ rule 110 request ANY sdp-header mline-index 1 c= modify "IN IP4 103.94.138.238" "IN IP4 192.168.0.11" 
+ rule 120 response ANY sdp-header mline-index 1 c= modify "IN IP4 103.94.138.238" "IN IP4 192.168.0.11" 
+ rule 130 request ANY sdp-header Audio-Attribute modify "a=candidate:1 1 (.*) 103.94.138.238" "a=candidate:1 1 \1 192.168.0.11" 
+ rule 140 request ANY sdp-header Audio-Attribute modify "a=candidate:1 2 (.*) 103.94.138.238" "a=candidate:1 2 \1 192.168.0.11" 
+ rule 150 response ANY sdp-header Audio-Attribute modify "a=candidate:1 1 (.*) 103.94.138.238" "a=candidate:1 1 \1 192.168.0.11" 
+ rule 160 response ANY sdp-header Audio-Attribute modify "a=candidate:1 2 (.*) 103.94.138.238" "a=candidate:1 2 \1 192.168.0.11" 
+ rule 170 request ANY sdp-header Audio-Attribute modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+!
+
+!! Manipulations for OPTIONS Keepalive to MS Teams
+!
+voice class sip-profiles 299
+ rule 9 request ANY sip-header Via modify "SIP(.*) 192.168.0.11(.*)" "SIP\1 103.94.138.238\2" 
+ rule 10 request OPTIONS sip-header From modify "<sip:192.168.0.11" "<sip:sbc.ajcollab.com" 
+ rule 20 request OPTIONS sip-header Contact modify "<sip:192.168.0.11" "<sip:sbc.ajcollab.com" 
+ rule 30 request OPTIONS sip-header User-Agent modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 40 response ANY sdp-header Connection-Info modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+ rule 50 response ANY sdp-header Audio-Connection-Info modify "IN IP4 192.168.0.11" "IN IP4 103.94.138.238" 
+!
+
+!!!!!!!!!! PART 2 !!!!!!!!!!
+!! For addressing the call transfers
+!
+voice class sip-hdr-passthrulist 290
+ passthru-hdr Referred-By
+!
+
+!! Used to tag and accept call from CUCM
+!
+voice class uri CUCM sip
+ host ipv4:172.16.11.12
+ host ipv4:172.16.11.13
+!
+
+!! Used to tag and accept call from MS Teams
+!
+voice class uri 290 sip
+ host sbc.ajcollab.com
+!
+
+!! Used to extend the call to CUCM
+!
+voice class server-group 1
+ ipv4 172.16.11.12
+ ipv4 172.16.11.13
+ description CUCM-SERVERS
+!
+
+!! List of Supported Codecs
+!
+voice class codec 1
+ codec preference 1 g711ulaw
+ codec preference 2 g711alaw
+ codec preference 3 g729r8
+ codec preference 4 g729br8
+!
+
+!! Configuring OPTIONS Keepalive
+!
+voice class sip-options-keepalive 200
+ transport tcp tls
+ sip-profiles 299
+!
+
+!! MS Teams Numbers, same DIDs with 88 as a prefix
+!
+voice class e164-pattern-map 200
+  e164 8812176411...
+!
+
+!! CUCM Extension Numbers
+!
+voice class e164-pattern-map 1
+  e164 1....
+ !
+!
+
+!!!!!!!!!! PART 3 !!!!!!!!!!
+!! CUBE Global Settings
+!
+voice service voip
+ ip address trusted list
+  ipv4 52.112.0.0 255.252.0.0 ! Microsoft Teams cloud services
+  ipv4 52.120.0.0 255.252.0.0
+  
+  ipv4 172.16.11.11 ! CUCM IPs
+  ipv4 172.16.11.12
+  ipv4 172.16.11.13
+  
+  ipv4 192.168.0.2 ! NAT Device
+
+ rtcp keepalive
+ rtp-port range 16384 16386 ! Only 2 Media Ports. Use only in lab, In production, consult with firewall team.
+ address-hiding
+ mode border-element 
+ allow-connections sip to sip
+ no supplementary-service sip refer
+ supplementary-service media-renegotiate
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ sip
+  session refresh
+  header-passing
+  error-passthru
+  srtp-auth sha1-80
+  pass-thru headers 290
+  sip-profiles inbound
+!
+
+!! MS Teams Tenant Settings
+!
+voice class tenant 200
+  handle-replaces
+  localhost dns:sbc.ajcollab.com
+  session transport tcp tls
+  no referto-passing
+  bind control source-interface GigabitEthernet0/0
+  bind media source-interface GigabitEthernet0/0
+  pass-thru headers 290
+  no pass-thru content custom-sdp
+  sip-profiles 200
+  sip-profiles 290 inbound
+  early-offer forced
+  block 183 sdp present
+!
+
+!! SIP UA Configurations
+!
+sip-ua 
+ nat symmetric check-media-src
+ no remote-party-id
+ retry invite 2
+ connection-reuse
+ crypto signaling default trustpoint SBC-CERT-STORE 
+ handle-replaces
+
+!!!!!!!!!! PART 4 !!!!!!!!!!
+!! Remove 88 from Teams Number and add +
+!
+voice translation-rule 1
+ rule 1 /\(88\)\(1217641....\)/ /+\2/
+!
+voice translation-profile TEAMS-OUT
+ translate called 1
+!
+
+!! Remove +
+!
+voice translation-rule 200
+ rule 1 /^\+1\(.*\)/ /1\1/
+!
+voice translation-profile TEAMS-IN
+ translate calling 200
+ translate called 200
+
+!
+
+
+!!!!!!!!!! PART 5 !!!!!!!!!!
+!! Dial-Peer to accept call from CUCM
+!
+dial-peer voice 1 voip
+ description INBOUND-FROM-CUCM
+ session protocol sipv2
+ incoming uri via CUCM
+ voice-class codec 1  
+ voice-class sip bind control source-interface GigabitEthernet0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+ session transport tcp tls
+!
+
+!! Dial-Peer to Send the call TO MS Teams
+!
+dial-peer voice 2 voip
+ description OUTBOUND-TO-MS-TEAMS
+ translation-profile outgoing TEAMS-OUT
+ preference 1
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ session target dns:sip.pstnhub.microsoft.com:5061
+ destination e164-pattern-map 200
+ voice-class codec 1  
+ voice-class sip tenant 200
+ voice-class sip options-keepalive profile 200
+ dtmf-relay rtp-nte
+ srtp
+ fax protocol none
+ no vad
+!
+
+!! Dial-Peer to accept call from MS Teams
+!
+dial-peer voice 3 voip
+ description inbound INBOUND-FROM-MS-TEAMS
+ translation-profile incoming 200
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ !!destination dpg 4
+ incoming uri to 290
+ voice-class codec 1  
+ voice-class sip tenant 200
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+
+!! Dial-Peer to Send the call to CUCM
+!
+dial-peer voice 4 voip
+ description OUTBOUND-TO-CUCM
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ session transport tcp tls
+ session server-group 1
+ destination e164-pattern-map 1
+ voice-class codec 1  
+ voice-class sip bind control source-interface GigabitEthernet0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+!!!!!!!!!! PART 6 !!!!!!!!!!
+!
+ip domain name ajcollab.com
+!
+!! Cleaning old Key Pairs, Only use if you wanted to clean the keys !!
+!
+crypto key zeroize rsa
+!
+
+!! Generate Key Pair!! 
+!
+crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
+!
+show crypto key mypubkey rsa
+!
+ip ssh rsa keypair-name SBC-RSA-KEY
+
+!! Create Trust Store, this will store Identity certificate and bundle of Intermediate and Root CAs !!
+!
+crypto pki trustpoint SBC-CERT-STORE
+ enrollment terminal
+ fqdn sbc.ajcollab.com 
+ subject-name cn=sbc.ajcollab.com,OU=Collab,O=AJ Collab
+ subject-alt-name sbc.ajcollab.com
+ serial-number none
+ ip-address non
+ revocation-check none
+ rsakeypair SBC-RSA-KEY
+!
+
+!! Generate CSR, will display the CSR in the terminal. Copy and send to CA!!
+!
+crypto pki enroll SBC-CERT-STORE
+!
+
+!! Authenticate the Identity certificate with bundle of Intermediate and Root CAs !!
+!
+crypto pki authenticate SBC-CERT-STORE
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded bundle of Intermediate and Root CAs as single.
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+-----END CERTIFICATE-----
+!
+
+!! Import identity certificate !!
+!
+crypto pki import SBC-CERT-STORE certificate
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded Identity certificate  content here
+-----END CERTIFICATE-----
+!
+
+!! View the Certificates !!
+!
+show crypto pki certificates
+!
+
+!! Point Trust Store for SIP Traffic !!
+sip-ua 
+crypto signaling default trustpoint SBC-CERT-STORE
+!
+
+!! Point Trust Store for HTTPS Traffic !!
+!
+ip http authentication local
+ip http secure-server
+ip http secure-trustpoint SBC-CERT-STORE
+!
+!! Microsoft Root CAs for Direct Routing !!
+crypto pki trustpoint BALTOMORE-MICROSOFT-CA
+enrollment terminal
+revocation-check none
+!
+!
+crypto pki authenticate BALTOMORE-MICROSOFT-CA
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded BALTOMORE certificate.
+-----END CERTIFICATE-----
+!!You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
+
+
+crypto pki trustpoint DIGICERT-MICROSOFT-CA
+enrollment terminal
+revocation-check none
+!
+crypto pki authenticate DIGICERT-MICROSOFT-CA
+!
+!!You can download DIGICERT certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer
+
+!! Enterprise CA Certificate Trust Store, Used to store the Internal CA Trust Relation !!
+!
+crypto pki trustpoint AJCOLLAB-ENTERPRISE-CA
+enrollment terminal
+revocation-check none
+!
+crypto pki authenticate AJCOLLAB-ENTERPRISE-CA
+!
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded BLK Collab CA certificate  content here
+-----END CERTIFICATE-----
+!
+
+
+!!! Show Commands !!!
+show crypto pki certificates
+show crypto key mypubkey rsa
+show sip-ua calls
+
+
 ```
 
 ## Helpful Links
