@@ -438,6 +438,20 @@ show crypto pki certificates
 show crypto key mypubkey rsa
 show sip-ua calls
 ```
+## Dial Plan Design
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/3eef9e13-8dce-4740-bb79-e2c47bb1af85)
+
+**CUCM to MS Teams** 
+- Same DID +12176411001 assigned to IP Phone and MS Teams
+- MS Teams require proper E.164 Pattern to route the incoming call
+- CUCM Uses 81001 to dial Teams Extension, this will be translated to 88-1217641-1001
+- At the CUBE level, remove the 88 and add + then the number becomes +1217641-1001
+- Teams will handle the proper E.164 Number and extend the call to Teams App
+
+**MS Teams to CUCM**
+- +11001 Voice route will send the call to CUBE
+- CUBE removed the + and route to CUCM
+- Extension rings
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
