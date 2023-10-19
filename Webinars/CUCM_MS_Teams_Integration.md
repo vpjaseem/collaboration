@@ -47,14 +47,12 @@ These are some helpful links for your references.
 1. Overview of Lab Topology and final goal
 2. Review of CUCM Current Setup
 3. Review of Microsoft Teams Current Setup and Licenses
-4. Configure CUBE in CUCM (SIP Trunk Sec Profile, SIP Profile, Adding Trunk, Dial Plan)
-5. CLI Voice Configuration for CUBE to integrate with CUCM (Voice Service VoIP, Trust List, Dial-Peers, etc.)
-6. Installing Public SSL Certificate in CUBE
-7. Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port)
-8. Microsoft Teams Direct Routing configurations (Voice Route, PSTN Usage Record, Voice Routing Policy)
-9. CLI Voice Configuration for CUBE to integrate with MS TEams (Voice Service VoIP, SIP Profiles Manipulations, Dial-Peers)
-10. Test calls between CUCM and MS Teams
-11. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
+4. Integration of CUBE with CUCM (SIP Trunk Sec Profile, SIP Profile, Adding Trunk, Route Pattern, Dial Plan, CUBE Dial-Peers)
+5. Installing Public SSL Certificate in CUBE
+6. Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port)
+7. Microsoft Teams Direct Routing configurations (Voice Route, PSTN Usage Record, Voice Routing Policy, Voice Service VoIP, SIP Profiles Manipulations, Dial-Peers)
+8. Test calls between CUCM and MS Teams
+9. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
 
 ## CUBE Configuration
 ```
