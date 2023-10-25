@@ -23,13 +23,6 @@ The contents and drawings we disucssed in the session will be available here.
 - Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
 - Strongly recomend to install Zoom App for the smooth experience 
 
-## Helpful Links
-These are some helpful links for your references. 
-- [CUCM - CUBE Secure SIP Trunking, Mixed Mode, CTL CAPF](https://youtu.be/d6gZiEG2bMw)
-- [CUBE SSL Certificate Installation Process](https://youtu.be/8pUtDOTw-HM)
-- How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
-- How to build your own Microsoft UC Lab - Complete guide to Developer Cloud tenant [Step by Step Guide]()
-
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/d813790e-c69d-47d7-a05b-2edf63fa0837)
 
@@ -42,6 +35,12 @@ These are some helpful links for your references.
 - [Microsoft 365 Admin Center](https://admin.microsoft.com/)
 - [Teams Admin Center](https://admin.teams.microsoft.com/)
 - MS Teams Root Certificate Authorities - [Baltimore CyberTrust Root](https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer) | [DigiCert Global Root G2](https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer) 
+
+## Build Your Own Lab
+You can build exactly similar lab setup by following below links.
+- How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
+- How to build your own Microsoft UC Lab - Complete guide to Developer Cloud tenant [Step by Step Guide](https://youtu.be/l4VdFLPXr40)
+
 
 ## Configuration Steps
 1. Overview of Lab Topology and final goal
@@ -469,6 +468,11 @@ show sip-ua calls
 - **[Video Training] Cloud Collaboration** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) 
 - **[Video Training] Advanced Cisco Collaboration Video Training** (vmware, Windows, CUCM, CUC, IMP, Expressway, UC Upgrade, MRA, B2B, Webex) - [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Advanced%20Cisco%20Collaboration%20Syllabus.pdf) | [Free eBook](https://drive.google.com/file/d/15pI_tyxAFgSUHW8Qb9PuwGxCKUsSR4EM/view?usp=sharing)
 - **[Live Training] Cloud Contact Center Training Live Training** (Basics of AWS, Genesys Cloud CX, Amazon Conenct, Webex Contact Center) - **15/April/2023** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
+
+## Helpful Links
+These are some helpful links for your references. 
+- [CUCM - CUBE Secure SIP Trunking, Mixed Mode, CTL CAPF](https://youtu.be/d6gZiEG2bMw)
+- [CUBE SSL Certificate Installation Process](https://youtu.be/8pUtDOTw-HM)
 
 ## Webinar Unanswered Q&A
 1. 
