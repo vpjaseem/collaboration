@@ -68,11 +68,17 @@ You can build exactly similar lab setup by following below links.
 4. *[CUCM]* Configure Route Group, Route List and Route Pattern (8XXXX > 881217641XXXX)
 5. *[CUBE]* voice class uri, voice class server-group 1, voice class codec, ip address trusted list, Translation Profile, Dial-Peers, e164 pattern maps
 6. *[CUBE]* Installing Public SSL Certificate in CUBE (crypto key commands, crypto pki trustpoint)
-7. *[CUCM]* Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port, Root Certificate Upload)
-8. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization
-9. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
-10. Test calls between CUCM and MS Teams
-11. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
+7. *[Firewall]* Public IP Address and NAT Configurations / Port Forwarding
+8. *[CUCM]* Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port, Root Certificate Upload)
+9. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization
+10. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
+11. Test calls between CUCM and MS Teams
+12. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
+
+## Firewall / NAT Configurations
+The CUBE must have a Public IP for interconnecting Microsoft Teams and CUBE. There are multiple ways to get Public IP to CUBE, either directly assign Public IP in one of the CUBE interfaces or configure NAT, so that it can translate Private IP of CUBE to Public IP. For Enterprise deployments, have meeting with your network and firewall team to get this completed. In my case, I do have a Public IP and will be doing the NAT. This will make sure any SIP, HTTP, RTP Traffic to my public IP will be forwarded to Private IP of CUBE which is 192.168.0.11
+
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/7766ef3a-a9a7-4dec-abc8-be87eee80357)
 
 ## CUBE Configuration Commands
 ```
