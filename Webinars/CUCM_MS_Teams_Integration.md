@@ -478,7 +478,7 @@ show sip-ua calls
 These are some helpful links for your references. 
 - [CUCM - CUBE Secure SIP Trunking, Mixed Mode, CTL CAPF](https://youtu.be/d6gZiEG2bMw)
 - [CUBE SSL Certificate Installation Process](https://youtu.be/8pUtDOTw-HM)
-- [Config Guide - Direct Routing for Microsoft Phone System with Cisco Unified Border Element (CUBE)](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Config%20Guide%20Direct%20Routing%20for%20Microsoft%20Phone%20System%20with%20Cisco%20Unified%20Border%20Element%20(CUBE).pdf)
+- ***Main Ref*** [Config Guide - Direct Routing for Microsoft Phone System with Cisco Unified Border Element (CUBE)](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Config%20Guide%20Direct%20Routing%20for%20Microsoft%20Phone%20System%20with%20Cisco%20Unified%20Border%20Element%20(CUBE).pdf)
 - [Feature Guide Direct Routing for Microsoft Phone System with Cisco Unified Communications Manager (UCM) via Cisco Unified Border Element (CUBE)](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Feature%20Guide%20Direct%20Routing%20for%20Microsoft%20Phone%20System%20with%20Cisco%20Unified%20Communications%20Manager%20(UCM)%20via%20Cisco%20Unified%20Border%20Element%20(CUBE).pdf)
 
 ## Webinar Unanswered Q&A
