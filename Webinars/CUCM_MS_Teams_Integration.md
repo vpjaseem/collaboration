@@ -71,7 +71,7 @@ You can build exactly similar lab setup by following below links.
 7. Public DNS Configuration (Mapping sbc.ajcollab.com to Public IP)
 8. *[Firewall]* Public IP Address and NAT Configurations / Port Forwarding
 9. *[CUCM]* Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port, Root Certificate Upload)
-10. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization
+10. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization, Number Assigment
 11. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
 12. Test calls between CUCM and MS Teams
 13. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
