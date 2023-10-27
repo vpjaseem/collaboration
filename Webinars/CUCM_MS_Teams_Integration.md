@@ -170,7 +170,7 @@ voice class e164-pattern-map 200
 !! CUCM Extension Numbers
 !
 voice class e164-pattern-map 1
-  e164 1....
+  e164 11...
  !
 !
 
@@ -242,17 +242,6 @@ voice translation-profile TEAMS-OUT
  translate called 1
 !
 
-!! Remove +
-!
-voice translation-rule 200
- rule 1 /^\+1\(.*\)/ /1\1/
-!
-voice translation-profile TEAMS-IN
- translate calling 200
- translate called 200
-
-!
-
 
 !!!!!!!!!! PART 5 !!!!!!!!!!
 !! Dial-Peer to accept call from CUCM
@@ -293,7 +282,6 @@ dial-peer voice 2 voip
 !
 dial-peer voice 3 voip
  description inbound INBOUND-FROM-MS-TEAMS
- translation-profile incoming 200
  rtp payload-type comfort-noise 13
  session protocol sipv2
  !!destination dpg 4
