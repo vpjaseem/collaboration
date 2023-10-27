@@ -326,7 +326,6 @@ dial-peer voice 4 voip
  description OUTBOUND-TO-CUCM
  rtp payload-type comfort-noise 13
  session protocol sipv2
- session transport tcp tls
  session server-group 1
  destination e164-pattern-map 1
  voice-class codec 1  
@@ -335,8 +334,10 @@ dial-peer voice 4 voip
  dtmf-relay rtp-nte
  srtp
  no vad
+ session transport tcp tls
 !
 !!!!!!!!!! PART 6 !!!!!!!!!!
+!! Certificate Management
 !
 ip domain name ajcollab.com
 !
