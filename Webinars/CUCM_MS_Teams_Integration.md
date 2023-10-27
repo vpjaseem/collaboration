@@ -1,6 +1,6 @@
 # CUCM - MS Teams Integration Webinar (03/Nov/2023 09:00PM IST)
 Unlocking Seamless Communication in the Modern Workplace
-In today's fast-paced business world, effective communication and collaboration are the cornerstones of success. As organizations seek to empower their teams and connect with customers across the globe, the intersection of technologies becomes pivotal. That's where this webinar comes in – a deep dive into the integration of two giants in the communication and collaboration space, **Cisco Unified Communications Manager (CUCM)** and **Microsoft Teams**, facilitated by **Cisco CUBE** with **Direct Routing fature**...!
+In today's fast-paced business world, effective communication and collaboration are the cornerstones of success. As organizations seek to empower their teams and connect with customers across the globe, the intersection of technologies becomes pivotal. That's where this webinar comes in – a deep dive into the integration of two giants in the communication and collaboration space, **Cisco Unified Communications Manager (CUCM)** and **Microsoft Teams**, facilitated by **Cisco CUBE** with **Direct Routing feature**...!
 
 <p align="center" width="100%">
   <img src="https://github.com/vpjaseem/collaboration/assets/67306692/0ab235b3-62ba-4c54-b1ff-8ff9bfbfd655">
@@ -8,10 +8,10 @@ In today's fast-paced business world, effective communication and collaboration 
 
 Join us for a comprehensive exploration of how to bridge the gap between these two industry leaders, enhancing your ability to connect, communicate, and collaborate with unparalleled efficiency. Our webinar will cover everything you need to know about bringing the power of Microsoft Teams into the Cisco Unified Communications environment, leveraging the robust capabilities of Cisco CUBE as the bridge.
 
-The session will be conducted via Zoom Meeting Platform, I Strongly recomend to **install Zoom App** for the smooth experience.
+The session will be conducted via Zoom Meeting Platform, I Strongly recommend to **install Zoom App** for the smooth experience.
 
 ## Class Whiteboard Link
-The contents and drawings we disucssed in the session will be available here.
+The contents and drawings we discussed in the session will be available here.
 - Whiteboard [Link](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS)
 
 ## Prerequisites
@@ -21,7 +21,7 @@ The contents and drawings we disucssed in the session will be available here.
 - Knowledge of Microsoft 365 Admin Center and MS Teams Admin Center
 - Basic understanding of Microsoft Direct Routing (Theoretical knowledge is enough)
 - Basic knowledge of Regular Expressions (RegEx) - [Regex Tool](https://regex101.com/)
-- Strongly recomend to install Zoom App for the smooth experience 
+- Strongly recommend to install Zoom App for the smooth experience 
 
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/d813790e-c69d-47d7-a05b-2edf63fa0837)
@@ -41,19 +41,40 @@ You can build exactly similar lab setup by following below links.
 - How to build your own Cisco UC Lab - Complete guide to setup Cisco UC in your laptop. [Step by Step Guide](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Build%20Your%20Own%20Home%20UC%20Lab%20in%20vmware%20Workstation.pdf) | [ISO and OVA Files](https://drive.google.com/drive/folders/1y48f4B0yjkxXxRnu92a1jAAPajKTeshK?usp=sharing)
 - How to build your own Microsoft UC Lab - Complete guide to Developer Cloud tenant [Step by Step Guide](https://youtu.be/l4VdFLPXr40)
 
+## Call Routing Architecture
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/cd42438f-543a-43b9-8ac4-9f770610be37)
+
+## Dial Plan Design
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/973840bf-3cab-4659-957e-2ee3208a22d6)
+
+**CUCM to MS Teams** 
+- Same DID +12176411001 assigned to IP Phone and MS Teams
+- MS Teams require proper E.164 Pattern to route the incoming call
+- CUCM Uses 8XXXX to dial Teams Extension, this will be translated to 881217641XXXX from Route Pattern level itself
+- At the CUBE level, remove the 88 and add + then the number becomes +1217641XXXX (e.g. +1217641-1001)
+- Teams will handle the proper E.164 Number and extend the call to Teams App
+
+**MS Teams to CUCM**
+- User is assigned with a dial-pan ^11(\d{3})$ to select proper 5 digit extension
+- User assigned with a Voice Routing Policy that is having a PSTN Usage Record
+- ^11(\d{3})$ Voice route having PSTN Usage Record will send the call to CUBE
+- CUBE route same call to to CUCM
+- Extension rings
 
 ## Configuration Steps
 1. Overview of Lab Topology and final goal
-2. Review of CUCM Current Setup
-3. Review of Microsoft Teams Current Setup and Licenses
-4. Integration of CUBE with CUCM (SIP Trunk Sec Profile, SIP Profile, Adding Trunk, Route Pattern, Dial Plan, CUBE Dial-Peers)
-5. Installing Public SSL Certificate in CUBE
-6. Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port)
-7. Microsoft Teams Direct Routing configurations (Voice Route, PSTN Usage Record, Voice Routing Policy, Voice Service VoIP, SIP Profiles Manipulations, Dial-Peers)
-8. Test calls between CUCM and MS Teams
-9. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
+2. Review of CUCM Current Setup (Registered IP Phones with CTL, Tomcat MSAN Certificates, [CallManager MSAN Certificate](https://youtu.be/d6gZiEG2bMw), Device Pools, Regions, Partitions, CSS)
+3. *[CUCM]* Configure SIP Profile, SIP Trunk Security Profile, SIP Trunk
+4. *[CUCM]* Configure Route Group, Route List and Route Pattern (8XXXX > 881217641XXXX)
+5. *[CUBE]* voice class uri, voice class server-group 1, voice class codec, ip address trusted list, Translation Profile, Dial-Peers, e164 pattern maps
+6. *[CUBE]* Installing Public SSL Certificate in CUBE (crypto key commands, crypto pki trustpoint)
+7. *[CUCM]* Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port, Root Certificate Upload)
+8. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization
+9. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
+10. Test calls between CUCM and MS Teams
+11. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
 
-## CUBE Configuration
+## CUBE Configuration Commands
 ```
 !!!!!!!!!! PART 1 !!!!!!!!!!
 !! Manipulations for outbound messages to MS Teams
@@ -425,37 +446,22 @@ show crypto pki certificates
 show crypto key mypubkey rsa
 show sip-ua calls
 ```
-## Dial Plan Design
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/3eef9e13-8dce-4740-bb79-e2c47bb1af85)
-
-**CUCM to MS Teams** 
-- Same DID +12176411001 assigned to IP Phone and MS Teams
-- MS Teams require proper E.164 Pattern to route the incoming call
-- CUCM Uses 81001 to dial Teams Extension, this will be translated to 88-1217641-1001
-- At the CUBE level, remove the 88 and add + then the number becomes +1217641-1001
-- Teams will handle the proper E.164 Number and extend the call to Teams App
-
-**MS Teams to CUCM**
-- +11001 Voice route will send the call to CUBE
-- CUBE removed the + and route to CUCM
-- Extension rings
-
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
 - Got in to Networking & Collaboration due to not being able to get a job in Embedded Systems :)
-- Lean at least a new thing everyday
+- Learn at least a new thing everyday
 - From Karuvarakundu, Kerala, India
 - Passionate about Technology, cars and driving
-- Skills: Cisco UC, Microsft UC, Genesys Cloud CX, Amazon Conenct, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
+- Skills: Cisco UC, Microsoft UC, Genesys Cloud CX, Amazon Connect, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
 - Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, CKA
-- Mob: +91-859-0101-859 ([WhatsApp Preffered](https://wa.me/+918590101859))<br>
+- Mob: +91-859-0101-859 ([WhatsApp Preferred](https://wa.me/+918590101859))<br>
 - [LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
 
 
 ## Courses offered by AJ Labs
 - **[Video Training] Cloud Collaboration** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) 
 - **[Video Training] Advanced Cisco Collaboration Video Training** (vmware, Windows, CUCM, CUC, IMP, Expressway, UC Upgrade, MRA, B2B, Webex) - [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Advanced%20Cisco%20Collaboration%20Syllabus.pdf) | [Free eBook](https://drive.google.com/file/d/15pI_tyxAFgSUHW8Qb9PuwGxCKUsSR4EM/view?usp=sharing)
-- **[Live Training] Cloud Contact Center Training Live Training** (Basics of AWS, Genesys Cloud CX, Amazon Conenct, Webex Contact Center) - **15/April/2023** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
+- **[Live Training] Cloud Contact Center Training Live Training** (Basics of AWS, Genesys Cloud CX, Amazon Connect, Webex Contact Center) - **15/April/2023** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
 
 ## Helpful Links
 These are some helpful links for your references. 
@@ -465,3 +471,4 @@ These are some helpful links for your references.
 ## Webinar Unanswered Q&A
 1. 
 2. 
+
