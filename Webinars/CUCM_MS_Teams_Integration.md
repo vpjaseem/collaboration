@@ -402,7 +402,7 @@ Paste the base 64 encoded Identity certificate  content here
 
 !! View the Certificates !!
 !
-show crypto pki certificates
+do show crypto pki certificates
 !
 
 !! Point Trust Store for SIP Traffic !!
