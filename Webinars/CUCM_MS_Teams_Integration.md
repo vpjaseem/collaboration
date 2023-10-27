@@ -74,7 +74,7 @@ You can build exactly similar lab setup by following below links.
 10. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization, Number Assigment
 11. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
 12. Test calls between CUCM and MS Teams
-13. Simultaneous Ring Feature (CUCM "SNR" and SM Teams "Ring also Ring" feature)
+13. Simultaneous Ring Feature (CUCM "SNR")
 
 ## Firewall / NAT Configurations
 The CUBE must have a Public IP for interconnecting Microsoft Teams and CUBE. There are multiple ways to get Public IP to CUBE, either directly assign Public IP in one of the CUBE interfaces or configure NAT, so that it can translate Private IP of CUBE to Public IP. For Enterprise deployments, have meeting with your network and firewall team to get this completed. In my case, I do have a Public IP and will be doing the NAT. This will make sure any SIP, HTTP, RTP Traffic to my public IP will be forwarded to Private IP of CUBE which is 192.168.0.11
