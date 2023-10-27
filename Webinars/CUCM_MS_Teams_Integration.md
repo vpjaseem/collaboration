@@ -337,7 +337,10 @@ dial-peer voice 4 voip
  no vad
  session transport tcp tls
 !
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!! PART 6 !!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! Certificate Management
 !
 ip domain name ajcollab.com
@@ -351,7 +354,7 @@ crypto key zeroize rsa
 !
 crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
 !
-show crypto key mypubkey rsa
+do show crypto key mypubkey rsa
 !
 ip ssh rsa keypair-name SBC-RSA-KEY
 
