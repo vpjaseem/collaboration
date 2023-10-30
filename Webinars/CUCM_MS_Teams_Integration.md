@@ -42,7 +42,8 @@ You can build exactly similar lab setup by following below links.
 - How to build your own Microsoft UC Lab - Complete guide to Developer Cloud tenant [Step by Step Guide](https://youtu.be/l4VdFLPXr40)
 
 ## Call Routing Architecture
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/cd42438f-543a-43b9-8ac4-9f770610be37)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/7a7d9d99-0c57-4726-8993-e5d7a31ed508)
+
 
 ## Dial Plan Design
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/973840bf-3cab-4659-957e-2ee3208a22d6)
