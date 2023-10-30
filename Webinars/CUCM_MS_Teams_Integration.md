@@ -67,9 +67,9 @@ You can build exactly similar lab setup by following below links.
 3. *[CUCM]* Configure SIP Profile, SIP Trunk Security Profile, SIP Trunk
 4. *[CUCM]* Configure Route Group, Route List and Route Pattern (8XXXX > 881217641XXXX)
 5. *[CUBE]* voice class uri, voice class server-group 1, voice class codec, ip address trusted list, Translation Profile, Dial-Peers, e164 pattern maps
-6. *[CUBE]* Installing Public SSL Certificate in CUBE (crypto key commands, crypto pki trustpoint)
-7. Public DNS Configuration (Mapping sbc.ajcollab.com to Public IP)
-8. *[Firewall]* Public IP Address and NAT Configurations / Port Forwarding
+6. Public DNS Configuration (Mapping sbc.ajcollab.com to Public IP)
+7. *[Firewall]* Public IP Address and NAT Configurations / Port Forwarding
+8. *[CUBE]* Installing Public SSL Certificate in CUBE (crypto key commands, crypto pki trustpoint)
 9. *[CUCM]* Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port, Root Certificate Upload)
 10. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization, Number Assigment
 11. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
