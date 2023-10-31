@@ -12,7 +12,7 @@ The session will be conducted via Zoom Meeting Platform, I Strongly recommend to
 
 ## Class Whiteboard Link
 The contents and drawings we discussed in the session will be available here.
-- Whiteboard [Link](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS)
+- Whiteboard [Link](https://wbd.ms/share/v2/aHR0cHM6Ly93aGl0ZWJvYXJkLm1pY3Jvc29mdC5jb20vYXBpL3YxLjAvd2hpdGVib2FyZHMvcmVkZWVtL2IyNjRmYTdhYjgzZTQwM2FhYWQ5ZTMwZDM5ZTUyNTQ5X0JCQTcxNzYyLTEyRTAtNDJFMS1CMzI0LTVCMTMxRjQyNEUzRF9iMzFmOTRhZC1iZTEzLTQxZmUtYjQ2Ny03OWQwOTVmNDRhMWQ=)
 
 ## Prerequisites
 - Basic understanding of CUCM, IP Phone Registration, SIP Trunking
