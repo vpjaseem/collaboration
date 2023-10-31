@@ -44,9 +44,8 @@ You can build exactly similar lab setup by following below links.
 ## Call Routing Architecture
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/7a7d9d99-0c57-4726-8993-e5d7a31ed508)
 
-
 ## Dial Plan Design
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/973840bf-3cab-4659-957e-2ee3208a22d6)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/7a757610-b42d-404f-b938-f8e69a028044)
 
 **CUCM to MS Teams** 
 - Same DID +12176411001 assigned to IP Phone and MS Teams
