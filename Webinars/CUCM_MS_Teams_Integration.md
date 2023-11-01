@@ -312,7 +312,6 @@ dial-peer voice 3 voip
  description inbound INBOUND-FROM-MS-TEAMS
  rtp payload-type comfort-noise 13
  session protocol sipv2
- !!destination dpg 4
  incoming uri to 290
  voice-class codec 1  
  voice-class sip tenant 200
