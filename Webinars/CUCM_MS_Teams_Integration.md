@@ -463,15 +463,17 @@ show sip-ua calls
 - From Karuvarakundu, Kerala, India
 - Passionate about Technology, cars and driving
 - Skills: Cisco UC, Microsoft UC, Genesys Cloud CX, Amazon Connect, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
-- Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, CKA
+- Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, vmware VCP, CKA
 - Mob: +91-859-0101-859 ([WhatsApp Preferred](https://wa.me/+918590101859))<br>
 - [LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
 
 
 ## Courses offered by AJ Labs
-- **[Video Training] Cloud Collaboration** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) 
+- **[Live Training / Video Recordings] Cloud Collaboration** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) | Start Date **05/Dec/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/CWtuClhGO4RCig4wOHm88B) if interested, or contact **+91-859-0101-859**
+
+- **[Live Training] Cloud Contact Center Training** (Basics of AWS, Genesys Cloud CX, Amazon Connect, Webex Contact Center) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Contact%20Center%20Training.pdf) | Start Date **15/April/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
+
 - **[Video Training] Advanced Cisco Collaboration Video Training** (vmware, Windows, CUCM, CUC, IMP, Expressway, UC Upgrade, MRA, B2B, Webex) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Adv.%20Cisco%20Collaboration%20Training.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Advanced%20Cisco%20Collaboration%20Syllabus.pdf) | [Free eBook](https://drive.google.com/file/d/15pI_tyxAFgSUHW8Qb9PuwGxCKUsSR4EM/view?usp=sharing)
-- **[Live Training] Cloud Contact Center Training** (Basics of AWS, Genesys Cloud CX, Amazon Connect, Webex Contact Center) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Contact%20Center%20Training.pdf) | Start Date **15/April/2023** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
 
 ## Helpful Links
 These are some helpful links for your references. 
