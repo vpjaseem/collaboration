@@ -12,7 +12,7 @@ The session will be conducted via Zoom Meeting Platform, I Strongly recommend to
 
 ## Class Whiteboard Link
 The contents and drawings we discussed in the session will be available here.
-- Whiteboard [Link](https://wbd.ms/share/v2/aHR0cHM6Ly93aGl0ZWJvYXJkLm1pY3Jvc29mdC5jb20vYXBpL3YxLjAvd2hpdGVib2FyZHMvcmVkZWVtL2IyNjRmYTdhYjgzZTQwM2FhYWQ5ZTMwZDM5ZTUyNTQ5X0JCQTcxNzYyLTEyRTAtNDJFMS1CMzI0LTVCMTMxRjQyNEUzRF9iMzFmOTRhZC1iZTEzLTQxZmUtYjQ2Ny03OWQwOTVmNDRhMWQ=)
+- Whiteboard [Link](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS)
 
 ## Prerequisites
 - Basic understanding of CUCM, IP Phone Registration, SIP Trunking
@@ -24,7 +24,7 @@ The contents and drawings we discussed in the session will be available here.
 - Strongly recommend to install Zoom App for the smooth experience 
 
 ## Lab Topology
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/d813790e-c69d-47d7-a05b-2edf63fa0837)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/892429a8-2d08-499e-9606-c51f1876d8c7)
 
 - CUCM 14 SU3 (14.0.1.13900-155)
 - CUBE - Cisco 2901 IOS Version 15.7(3)M8
@@ -45,7 +45,7 @@ You can build exactly similar lab setup by following below links.
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/7a7d9d99-0c57-4726-8993-e5d7a31ed508)
 
 ## Dial Plan Design
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/7a757610-b42d-404f-b938-f8e69a028044)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/16cbf7f6-6ed1-44a5-82a1-1fb40712dcc0)
 
 **CUCM to MS Teams** 
 - Same DID +12176411001 assigned to IP Phone and MS Teams
@@ -71,7 +71,7 @@ You can build exactly similar lab setup by following below links.
 7. *[Firewall]* Public IP Address and NAT Configurations / Port Forwarding
 8. *[CUBE]* Installing Public SSL Certificate in CUBE (crypto key commands, crypto pki trustpoint)
 9. *[CUCM]* Migrating CUCM - CUBE SIP trunk to Secure SIP Trunk (TLS 5061 Port, Root Certificate Upload)
-10. *[MS Teams]* License Assigment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization, Number Assigment
+10. *[MS Teams]* License Assignment, Adding SBC, Voice Route, PSTN Usage Record, Voice Routing Policy, Dial-Plan with Normalization, Number Assingment
 11. *[CUBE]* SIP Profiles, Options Ping, voice service voip, voice class tenant 200, sip-ua
 12. Test calls between CUCM and MS Teams
 13. Simultaneous Ring Feature (CUCM "SNR")
