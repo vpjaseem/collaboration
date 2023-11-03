@@ -469,7 +469,7 @@ show sip-ua calls
 
 
 ## Courses offered by AJ Labs
-- **[Live Training / Video Recordings] Cloud Collaboration** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) | Start Date **05/Dec/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/CWtuClhGO4RCig4wOHm88B) if interested, or contact **+91-859-0101-859**
+- **[Live Training / Video Recordings] Cloud Collaboration** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Collaboration%20Training%20AJ%20Labs%20Ad.pdf) | [Syllabus](https://github.com/vpjaseem/collaboration/blob/main/Webinars/AJ%20Labs%20Cloud%20Collaboration%20Syllabus.pdf) | Start Date **05/Dec/2023** | Join the [WhatsApp Group](https://chat.whatsapp.com/CWtuClhGO4RCig4wOHm88B) if interested, or contact **+91-859-0101-859**
 
 - **[Live Training] Cloud Contact Center Training** (Basics of AWS, Genesys Cloud CX, Amazon Connect, Webex Contact Center) - [Topic Summary](https://github.com/vpjaseem/collaboration/blob/main/Webinars/Cloud%20Contact%20Center%20Training.pdf) | Start Date **15/April/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
 
