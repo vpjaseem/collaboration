@@ -486,7 +486,7 @@ These are some helpful links for your references.
 Thank you for joining our recent webinar on 'Integrating CUCM and MS Teams.' We hope you found it valuable! Your feedback is important to us, and we would greatly appreciate it if you could take a few minutes to complete a short survey. Your input will help us improve future webinars and ensure they meet your expectations.
 
 Please click on the following link to access the survey:
-[Feedback Link]()
+[Feedback Link](https://forms.gle/2TXCHTJuyVRXuyxh8)
 
 ## Webinar Unanswered Q&A
 1. 
