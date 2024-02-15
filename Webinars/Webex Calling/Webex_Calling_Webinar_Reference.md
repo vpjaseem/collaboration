@@ -12,14 +12,14 @@ Unlock the Power of **Webex Calling with CUBE Local Gateway!** Join our free web
 
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/77913cd2-899c-4472-8ab9-16b0ffd41109)
-- Users are uing Webex App, Mobile App, IP Phones to access Webex Services
+- Users are using Webex App, Mobile App, IP Phones to access Webex Services
 - vCUBE deployed in Azure and Network Security Group configured to allow SIP and RTP ports
 - Twilio Elastic SIP Trunking acts as PSTN
 
 ## Build your own FREE lab
 The entire lab can be build absolutely free of cost.
 - [Webex SandBox](https://developer.webex.com/docs/developer-sandbox-guide) – Free Webex account for 90 days
-- [Azure Free Trial](https://azure.microsoft.com/en-in/pricing/offers/ms-azr-0044p) – Fully functionhal Azure Free account with $200 credit
+- [Azure Free Trial](https://azure.microsoft.com/en-in/pricing/offers/ms-azr-0044p) – Fully functional Azure Free account with $200 credit
 - [Twilio](https://www.twilio.com/try-twilio) – Free Twilio Account
 
 ## Call Routing Architecture
