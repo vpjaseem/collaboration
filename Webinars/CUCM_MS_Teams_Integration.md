@@ -10,6 +10,10 @@ Join us for a comprehensive exploration of how to bridge the gap between these t
 
 The session will be conducted via Zoom Meeting Platform, I Strongly recommend to **install Zoom App** for the smooth experience.
 
+## Webinar Recordings
+- [Part 1](https://youtu.be/3q0DsU73KpI)
+- [Part 2](https://youtu.be/PB83udFEhFg)
+
 ## Class Whiteboard Link
 The contents and drawings we discussed in the session will be available here.
 - Whiteboard [Link](https://notability.com/n/2ENMinaEW4jAfuCk2Ig4vS)
