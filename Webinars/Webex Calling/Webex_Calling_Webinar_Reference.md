@@ -29,10 +29,20 @@ Image here
 
 ## CUBE Configuration Commands
 
+## Courses offered by AJ Labs
+Below are the Training course offered by AJ Labs.
+
+1. **Advanced Cloud Collaboration [On demand Video Recordings]** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://drive.google.com/file/d/1ezFuS6ulvLfyg6PQZXBnnH3McsTaqMWH/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/19zRydHD4n0drATeoFcNbjbfUphrA-IzJ/view?usp=sharing) | if interested, or contact **+91-859-0101-859**
+   
+3. **Cloud Contact Center Training [Live Training]** (Basics of AWS, Genesys Cloud CX, Amazon Connect, Webex Contact Center) - [Topic Summary](https://drive.google.com/file/d/1gxtexL8OPdGawX1GyDmNBPMoox-GJV-M/view?usp=sharing) | Start Date **15/April/2024** (subjected to slight changes) | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5) if interested, or contact **+91-859-0101-859**
+   
+5. **Advanced Cisco Collaboration Video Training [On demand Video Recordings]** (vmware, Windows, CUCM, CUC, IMP, Expressway, CUBE, CUBE HA, SIP Deep Dive, Log Analysis, UC Upgrade, MRA, B2B, Webex) - [Topic Summary](https://drive.google.com/file/d/12KOZ5IOxI58vu2E_Vi0uYr6Y2Rc4LF6J/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/12xrl_SdC4XMCGJe8yB5m778TorUhtChM/view?usp=sharing) | [Free eBook](https://drive.google.com/file/d/1dPrYSzh5ymVe5Zadum3wW9adl3x7tLBB/view?usp=sharing)
+
+
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
 - Got in to Networking & Collaboration due to not being able to get a job in Embedded Systems :)
-- Learn at least a new thing everyday
+- Learn at least a new thing everyday, Served Cisco TAC Bangalore Team for 5 Years
 - From Karuvarakundu, Kerala, India
 - Passionate about Technology, cars and driving
 - Skills: Cisco UC, Microsoft UC, Genesys Cloud CX, Amazon Connect, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
