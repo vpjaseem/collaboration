@@ -49,8 +49,10 @@ Below are the Training course offered by AJ Labs.
 - Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, vmware VCP, CKA
 - Mob: +91-859-0101-859 ([WhatsApp Preferred](https://wa.me/+918590101859))<br>
 - [LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
+- [YouTube](https://www.youtube.com/@aj-labs)
 
 ## Helpful Links
+- **CUCM - MS Teams Integration with CUBE** [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
 - [Webex Calling with Local Gateway official guide](https://help.webex.com/en-us/article/jr1i3r/Configure-Local-Gateway-on-Cisco-IOS-XE-for-Webex-Calling)
 - [Twilio Elastic SIP Trunking with CUBE](https://assets.cdn.prod.twilio.com/documents/InteropGuide_Twilio_vCiscoUBE_CiscoUCM_Final_1.1.pdf)
 
