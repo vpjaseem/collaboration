@@ -52,7 +52,7 @@ Below are the Training course offered by AJ Labs.
 - [YouTube](https://www.youtube.com/@aj-labs)
 
 ## Helpful Links
-- **CUCM - MS Teams Integration with CUBE** [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
+- **CUCM - MS Teams Integration with CUBE** | [Reference](https://github.com/vpjaseem/collaboration/blob/main/Webinars/CUCM_MS_Teams_Integration.md) | [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
 - [Webex Calling with Local Gateway official guide](https://help.webex.com/en-us/article/jr1i3r/Configure-Local-Gateway-on-Cisco-IOS-XE-for-Webex-Calling)
 - [Twilio Elastic SIP Trunking with CUBE](https://assets.cdn.prod.twilio.com/documents/InteropGuide_Twilio_vCiscoUBE_CiscoUCM_Final_1.1.pdf)
 
