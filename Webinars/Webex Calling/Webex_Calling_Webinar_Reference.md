@@ -28,123 +28,11 @@ Image here
 ## Dial Plan Design
 
 ## CUBE Configuration Commands
-**Certificate Configurations**
-```
-!!License Configuration for vCUBE
-!
-license boot level network-premier addon dna-premier
-do write
-exit
-!reload
-!
-!! Cleaning old Key Pairs, Only use if you wanted to clean the keys !! Otherwise identify the key with show crypto key mypubkey rsa
-!
-crypto key zeroize rsa
-!
 
-!! Adding Name Server, Domain Name and NTP Server !!
-!
-ip name-server 208.67.222.222 208.67.220.220 8.8.8.8
-ip domain name ajcollab.com
-ntp server 216.239.35.8
-!
-
-!! Generate Key Pair!! 
-!
-crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
-ip ssh rsa keypair-name SBC-RSA-KEY
-!
-
-!! Create Trust Store, this will store Identity certificate and bundle of Intermediate and Root CAs !!
-!
-crypto pki trustpoint SBC-CERT-STORE
- enrollment terminal
- fqdn sbc.ajcollab.com 
- subject-name cn=sbc.ajcollab.com,OU=Collab,O=AJ Collab
- subject-alt-name sbc.ajcollab.com
- serial-number none
- ip-address non
- revocation-check none
- rsakeypair SBC-RSA-KEY
-!
-
-!! Generate CSR, will display the CSR in the terminal. Copy and send to CA!!
-!
-crypto pki enroll SBC-CERT-STORE
-!
-
-!! Authenticate the Identity certificate with bundle of Intermediate and Root CAs !!
-!
-crypto pki authenticate SBC-CERT-STORE
-!
------BEGIN CERTIFICATE-----
-Paste the base 64 encoded bundle of Intermediate and Root CAs as single.
------END CERTIFICATE-----
------BEGIN CERTIFICATE-----
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
------END CERTIFICATE-----
------BEGIN CERTIFICATE-----
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
------END CERTIFICATE-----
-!
-
-!! Import identity certificate !!
-!
-crypto pki import SBC-CERT-STORE certificate
-!
------BEGIN CERTIFICATE-----
-Paste the base 64 encoded Identity certificate  content here
------END CERTIFICATE-----
-!
-
-!! View the Certificates !!
-!
-show crypto pki certificates
-!
-
-!! Point Trust Store for SIP Traffic !!
-sip-ua 
-crypto signaling default trustpoint SBC-CERT-STORE
-!
-
-!! Point Trust Store for HTTPS Traffic !! This is to check whether the cert installation correct or not. You can disable this later.
-!
-ip http authentication local
-ip http secure-server
-ip http secure-trustpoint SBC-CERT-STORE
-!
-ip ssh rsa keypair-name SBC-RSA-KEY
-!
-
-!! Microsft Root CAs for Direct Routing !!
-crypto pki trustpoint BALTOMORE-MICROSOFT-CA
-enrollment terminal
-revocation-check none
-!
-crypto pki authenticate BALTOMORE-MICROSOFT-CA
-!
------BEGIN CERTIFICATE-----
-Paste the base 64 encoded BALTOMORE Root certificate.
------END CERTIFICATE-----
-!!You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
-
-
-crypto pki trustpoint DIGICERT-MICROSOFT-CA
-enrollment terminal
-revocation-check none
-!
-crypto pki authenticate DIGICERT-MICROSOFT-CA
-!
------BEGIN CERTIFICATE-----
-Paste the base 64 encoded DIGICERT Root certificate.
------END CERTIFICATE-----
-!!You can download DIGICERT certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer
-```
-
-**Call Routing, SIP and Dial Peer Configurations**
 ```
 Configurations here!
 ```
+
 
 ## Courses offered by AJ Labs
 Below are the Training course offered by AJ Labs.
@@ -170,6 +58,7 @@ Below are the Training course offered by AJ Labs.
 
 ## Helpful Links
 - **CUCM - MS Teams Integration with CUBE** | [Reference](https://github.com/vpjaseem/collaboration/blob/main/Webinars/CUCM_MS_Teams_Integration.md) | [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
+- [Install SSL Certificates in Cisco Router / CUBE](https://youtu.be/8pUtDOTw-HM?si=9z0fIDQJraC-qvgG)
 - [Webex Calling with Local Gateway official guide](https://help.webex.com/en-us/article/jr1i3r/Configure-Local-Gateway-on-Cisco-IOS-XE-for-Webex-Calling)
 - [Twilio Elastic SIP Trunking with CUBE](https://assets.cdn.prod.twilio.com/documents/InteropGuide_Twilio_vCiscoUBE_CiscoUCM_Final_1.1.pdf)
 
