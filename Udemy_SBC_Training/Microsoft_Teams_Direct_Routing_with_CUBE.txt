@@ -376,4 +376,86 @@ voice class dpg 4
  dial-peer 4 preference 1
 !
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 
+!!Sample SIP Profiles configuration when the CUBE is deployed in Azure with Private IP=172.16.1.10, Public IP=52.168.85.164 and domain name=sbc.ajcollab.com
+
+voice class sip-profiles 11
+ rule 10 request ANY sip-header Contact modify "@.*:" "@sbc.ajcollab.com:" 
+ rule 20 response ANY sip-header Contact modify "@.*:" "@sbc.ajcollab.com:" 
+ rule 30 request ANY sip-header SIP-Req-URI modify "sip:(.*):5061 (.*)" "sip:\1:5061;user=phone \2" 
+ rule 40 request ANY sip-header User-Agent modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 50 response ANY sip-header Server modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 60 request ANY sdp-header Audio-Attribute modify "a=sendonly" "a=inactive" 
+ rule 70 response 200 sdp-header Audio-Connection-Info modify "0.0.0.0" "52.168.85.164" 
+ rule 71 response ANY sdp-header Connection-Info modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+ rule 72 response ANY sdp-header Audio-Connection-Info modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+ rule 73 request ANY sdp-header Connection-Info modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+ rule 74 request ANY sdp-header Audio-Connection-Info modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+ rule 80 request ANY sdp-header Audio-Attribute modify "(a=crypto:.*inline:[A-Za-z0-9+/=]+)" "\1|2^31" 
+ rule 90 response ANY sdp-header Audio-Attribute modify "(a=crypto:.*inline:[A-Za-z0-9+/=]+)" "\1|2^31" 
+ rule 100 request ANY sdp-header Audio-Attribute modify "a=candidate.*" "a=label:main-audio" 
+ rule 110 response ANY sdp-header Audio-Attribute modify "a=candidate.*" "a=label:main-audio" 
+ rule 120 response 486 sip-header Reason modify "cause=34;" "cause=17;" 
+ rule 300 response ANY sdp-header Audio-Attribute modify "a=rtcp:(.*) IN IP4 172.16.1.10" "a=rtcp:\1 IN IP4 52.168.85.164" 
+ rule 310 request ANY sdp-header Audio-Attribute modify "a=rtcp:(.*) IN IP4 172.16.1.10" "a=rtcp:\1 IN IP4 52.168.85.164" 
+ rule 320 response ANY sdp-header Audio-Attribute modify "a=candidate:1 1(.*) 172.16.1.10 (.*)" "a=candidate:1 1\1 52.168.85.164 \2" 
+ rule 330 request ANY sdp-header Audio-Attribute modify "a=candidate:1 1(.*) 172.16.1.10 (.*)" "a=candidate:1 1\1 52.168.85.164 \2" 
+ rule 340 response ANY sdp-header Audio-Attribute modify "a=candidate:1 2(.*) 172.16.1.10 (.*)" "a=candidate:1 2\1 52.168.85.164 \2" 
+ rule 350 request ANY sdp-header Audio-Attribute modify "a=candidate:1 2(.*) 172.16.1.10 (.*)" "a=candidate:1 2\1 52.168.85.164 \2" 
+!
+
+!! SIP Profiles Manipulation From Teams Phone System.
+!
+voice class sip-profiles 12
+ rule 10 request REFER sip-header From copy "@(.*com)" u05 
+ rule 15 request REFER sip-header From copy "sip:(sip.*com)" u05 
+ rule 20 request REFER sip-header Refer-To modify "sip:\+(.*)@.*:5061" "sip:+AAA\1@\u05:5061" 
+ rule 30 request REFER sip-header Refer-To modify "<sip:sip.*:5061" "<sip:+AAA@\u05:5061" 
+ rule 40 response ANY sip-header Server modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 50 request ANY sdp-header Audio-Attribute modify "a=ice-.*" "a=label:main-audio" 
+ rule 60 request ANY sdp-header Attribute modify "a=ice-.*" "a=label:main-audio" 
+ rule 70 response ANY sdp-header Audio-Attribute modify "IN IP4 52.168.85.164" "IN IP4 172.16.1.10" 
+ rule 80 request ANY sdp-header Connection-Info modify "IN IP4 52.168.85.164" "IN IP4 172.16.1.10" 
+ rule 90 response ANY sdp-header Audio-Attribute modify "IN IP4 52.168.85.164" "IN IP4 172.16.1.10" 
+ rule 100 response ANY sdp-header Connection-Info modify "IN IP4 52.168.85.164" "IN IP4 172.16.1.10" 
+ rule 110 request ANY sdp-header mline-index 1 c= modify "IN IP4 52.168.85.164" "IN IP4 172.16.1.10" 
+ rule 120 response ANY sdp-header mline-index 1 c= modify "IN IP4 52.168.85.164" "IN IP4 172.16.1.10" 
+ rule 130 request ANY sdp-header Audio-Attribute modify "a=candidate:1 1 (.*) 52.168.85.164" "a=candidate:1 1 \1 172.16.1.10" 
+ rule 140 request ANY sdp-header Audio-Attribute modify "a=candidate:1 2 (.*) 52.168.85.164" "a=candidate:1 2 \1 172.16.1.10" 
+ rule 150 response ANY sdp-header Audio-Attribute modify "a=candidate:1 1 (.*) 52.168.85.164" "a=candidate:1 1 \1 172.16.1.10" 
+ rule 160 response ANY sdp-header Audio-Attribute modify "a=candidate:1 2 (.*) 52.168.85.164" "a=candidate:1 2 \1 172.16.1.10" 
+ rule 170 request ANY sdp-header Audio-Attribute modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+!
+
+!! SIP Profiles Manipulation for OPTIONS Keepalive to Teams Phone System, please replace sbc.ajcollab.com with your own SBC FQDN.
+!
+voice class sip-profiles 13
+ rule 9 request ANY sip-header Via modify "SIP(.*) 172.16.1.10(.*)" "SIP\1 52.168.85.164\2" 
+ rule 10 request OPTIONS sip-header From modify "<sip:172.16.1.10" "<sip:sbc.ajcollab.com" 
+ rule 20 request OPTIONS sip-header Contact modify "<sip:172.16.1.10" "<sip:sbc.ajcollab.com" 
+ rule 30 request OPTIONS sip-header User-Agent modify "(IOS.*)" "\1\x0D\x0AX-MS-SBC: Cisco UBE/ISR4321/\1" 
+ rule 40 response ANY sdp-header Connection-Info modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+ rule 50 response ANY sdp-header Audio-Connection-Info modify "IN IP4 172.16.1.10" "IN IP4 52.168.85.164" 
+!
+voice class sip-hdr-passthrulist 14
+ passthru-hdr Referred-By
+!
+voice class sip-options-keepalive 15
+ transport tcp tls
+ sip-profiles 13
+!
+!! SIP Profile Manipulation for Twilio PSTN Call, please replace sbc.ajcollab.com with your own SBC FQDN and ajcollab02.pstn.twilio.com to your Twilio Termination URI.
+!
+voice class sip-profiles 21
+ request REINVITE sip-header From modify "(<.*:.*)(@.*>)" "\1@ajcollab02.pstn.twilio.com>"
+ request CANCEL sip-header From modify "(<.*:.*)(@.*>)" "\1@ajcollab02.pstn.twilio.com>"
+ request INVITE sip-header To modify "(<.*:.*)(@.*>)" "\1@ajcollab02.pstn.twilio.com>"
+ request REINVITE sip-header To modify "(<.*:.*)(@.*>)" "\1@ajcollab02.pstn.twilio.com>"
+ request INVITE sip-header From modify "(<.*:.*)(@.*>)" "\1@ajcollab02.pstn.twilio.com;user=phone>"
+ request INVITE sip-header P-Asserted-Identity modify "(<.*:.*)(@.*>)" "\1@ajcollab02.pstn.twilio.com;user=phone>"
+ request ANY sip-header Contact modify "@.*:" "@sbc.ajcollab.com:" 
+ response ANY sip-header Contact modify "@.*:" "@sbc.ajcollab.com:"
+!
