@@ -84,7 +84,7 @@ revocation-check crl
 crypto pki authenticate BALTOMORE-MICROSOFT-CA
 !
 -----BEGIN CERTIFICATE-----
-Paste the base 64 encoded BALTOMORE certificate.
+Paste the base 64 encoded BALTOMORE Root certificate.
 -----END CERTIFICATE-----
 !!You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
 
@@ -95,4 +95,7 @@ revocation-check crl
 !
 crypto pki authenticate DIGICERT-MICROSOFT-CA
 !
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded DIGICERT Root certificate.
+-----END CERTIFICATE-----
 !!You can download DIGICERT certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer
