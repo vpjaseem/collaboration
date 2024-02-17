@@ -28,7 +28,7 @@ Image here
 ## Dial Plan Design
 
 ## CUBE Configuration Commands
-
+**Certificate Configurations**
 ```
 !!License Configuration for vCUBE
 !
@@ -37,7 +37,7 @@ do write
 exit
 !reload
 !
-!! Cleaning old Key Pairs, ONly use if you wanted to clean the keys !!
+!! Cleaning old Key Pairs, Only use if you wanted to clean the keys !! Otherwise identify the key with show crypto key mypubkey rsa
 !
 crypto key zeroize rsa
 !
@@ -52,6 +52,7 @@ ntp server 216.239.35.8
 !! Generate Key Pair!! 
 !
 crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
+ip ssh rsa keypair-name SBC-RSA-KEY
 !
 
 !! Create Trust Store, this will store Identity certificate and bundle of Intermediate and Root CAs !!
@@ -106,7 +107,7 @@ sip-ua
 crypto signaling default trustpoint SBC-CERT-STORE
 !
 
-!! Point Trust Store for HTTPS Traffic !!
+!! Point Trust Store for HTTPS Traffic !! This is to check whether the cert installation correct or not. You can disable this later.
 !
 ip http authentication local
 ip http secure-server
@@ -118,26 +119,32 @@ ip ssh rsa keypair-name SBC-RSA-KEY
 !! Microsft Root CAs for Direct Routing !!
 crypto pki trustpoint BALTOMORE-MICROSOFT-CA
 enrollment terminal
-revocation-check crl
-!
------BEGIN CERTIFICATE-----
-Paste the base 64 encoded BALTOMORE certificate.
------END CERTIFICATE-----
-!!You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
-
+revocation-check none
 !
 crypto pki authenticate BALTOMORE-MICROSOFT-CA
 !
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded BALTOMORE Root certificate.
+-----END CERTIFICATE-----
+!!You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
+
+
 crypto pki trustpoint DIGICERT-MICROSOFT-CA
 enrollment terminal
-revocation-check crl
+revocation-check none
 !
 crypto pki authenticate DIGICERT-MICROSOFT-CA
 !
+-----BEGIN CERTIFICATE-----
+Paste the base 64 encoded DIGICERT Root certificate.
+-----END CERTIFICATE-----
 !!You can download DIGICERT certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/DigiCertGlobalRootG2.cer
-
 ```
 
+**Call Routing, SIP and Dial Peer Configurations**
+```
+Configurations here!
+```
 
 ## Courses offered by AJ Labs
 Below are the Training course offered by AJ Labs.
