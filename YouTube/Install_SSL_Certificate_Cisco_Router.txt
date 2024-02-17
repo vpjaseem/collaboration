@@ -81,13 +81,13 @@ crypto pki trustpoint BALTOMORE-MICROSOFT-CA
 enrollment terminal
 revocation-check crl
 !
+crypto pki authenticate BALTOMORE-MICROSOFT-CA
+!
 -----BEGIN CERTIFICATE-----
 Paste the base 64 encoded BALTOMORE certificate.
 -----END CERTIFICATE-----
 !!You can download BALTOMORE certificate from here: https://github.com/vpjaseem/collaboration/blob/main/YouTube/BaltimoreCyberTrustRoot.cer
 
-!
-crypto pki authenticate BALTOMORE-MICROSOFT-CA
 !
 crypto pki trustpoint DIGICERT-MICROSOFT-CA
 enrollment terminal
