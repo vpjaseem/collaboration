@@ -5,7 +5,7 @@ Unlock the Power of **Webex Calling with CUBE Local Gateway!** Join our free web
 </p>
 
 ## Prerequisites
-- Install Zoom software and try to join from PC (mobile app will have limited experience)
+- Install [Webex App](https://www.webex.com/downloads.html) and try to join from PC (mobile app will have limited experience)
 - Basic understanding of Webex Control Hub
 - Basic Knowledge of CUBE (Dial-Peers, SIP)
 - Basic understanding of Cloud Computing (not mandatory)
