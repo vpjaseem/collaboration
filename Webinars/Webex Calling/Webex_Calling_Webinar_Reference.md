@@ -27,12 +27,24 @@ Image here
 
 ## Dial Plan Design
 
-## CUBE Configuration Commands
+## Configurations Steps
+**Azure**
+1. Azure Marketplace > Cisco Virtual CUBE Session Border Controller > Create > Select Subscription and follow the VM creation wizard and complete the deployment
+2. Configure Network Security Group to allow required ports (SSH 22, SIP 5060 - 5080, Media 16384 - 32787)
+
+**Webex Side**
+1. Add Trunk, Route Group, Dial Plan
+2. Add a location (I have used this address 2770 E Trinity Mls Rd, Carrollton, TX 75006, USA), Enable Premise based PSTN, Add DID Numbers
+3. Assign License and Location to the user
+
+**CUBE Side**
+1. Configure the CUBE as given below
 
 ```
 Configurations here!
 ```
-
+**PSTN Twilio Side**
+1. sdzzzz
 
 ## Courses offered by AJ Labs
 Below are the Training course offered by AJ Labs.
@@ -60,6 +72,8 @@ Below are the Training course offered by AJ Labs.
 - **CUCM - MS Teams Integration with CUBE** | [Reference](https://github.com/vpjaseem/collaboration/blob/main/Webinars/CUCM_MS_Teams_Integration.md) | [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
 - [Install SSL Certificates in Cisco Router / CUBE](https://youtu.be/8pUtDOTw-HM?si=9z0fIDQJraC-qvgG)
 - [Webex Calling with Local Gateway official guide](https://help.webex.com/en-us/article/jr1i3r/Configure-Local-Gateway-on-Cisco-IOS-XE-for-Webex-Calling)
+- [Webex Dial Plan Configuration](https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling#Cisco_Reference.dita_cd257f9a-1936-4b97-a473-64681b672bd3)
+- [Webex Dial Plan by Country](https://help.webex.com/en-us/article/757iyo/Dial-plans-by-country#topic_hx1_mct_msb)
 - [Twilio Elastic SIP Trunking with CUBE](https://assets.cdn.prod.twilio.com/documents/InteropGuide_Twilio_vCiscoUBE_CiscoUCM_Final_1.1.pdf)
 
 ## Webinar Unanswered Q&A
