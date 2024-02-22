@@ -33,13 +33,15 @@ Image here
 2. Configure Network Security Group to allow required ports (SSH 22, SIP 5060 - 5080, Media 16384 - 32787)
 
 **Webex Side**
-1. Add Trunk, Route Group, Dial Plan
-2. Add a location (I have used this address 2770 E Trinity Mls Rd, Carrollton, TX 75006, USA), Enable Premise based PSTN, Add DID Numbers
-3. Assign License and Location to the user
+1. Add Location (I have used this address 2770 E Trinity Mls Rd, Carrollton, TX 75006, USA), Add Trunk, Route Group, Dial Plan, Add Numbers
+2. Enable Premise based PSTN
+3. Assign License and Location and Number to the user
 
 **CUBE Side**
-1. Configure the CUBE as given below
+1. Webex Trunk and CUBE Configuration Mapping
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/05e3b699-844b-4f9d-8c09-a14826ef82d5)
 
+2. CUBE Configurations
 ```
 Configurations here!
 ```
