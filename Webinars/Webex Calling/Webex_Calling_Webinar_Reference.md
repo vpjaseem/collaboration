@@ -39,7 +39,7 @@ Image here
 
 **CUBE Side**
 1. Webex Trunk and CUBE Configuration Mapping
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/05e3b699-844b-4f9d-8c09-a14826ef82d5)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/d0d00612-64cf-4060-803e-1cf46ebfd6cf)
 
 2. CUBE Configurations
 ```
