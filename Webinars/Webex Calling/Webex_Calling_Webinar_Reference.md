@@ -71,6 +71,7 @@ Below are the Training course offered by AJ Labs.
 ## Helpful Links
 - **CUCM - MS Teams Integration with CUBE** | [Reference](https://github.com/vpjaseem/collaboration/blob/main/Webinars/CUCM_MS_Teams_Integration.md) | [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
 - [Install SSL Certificates in Cisco Router / CUBE](https://youtu.be/8pUtDOTw-HM?si=9z0fIDQJraC-qvgG)
+- [Webex Calling IPs](https://help.webex.com/en-us/article/b2exve/Port-Reference-Information-for-Webex-Calling)
 - [Webex Calling with Local Gateway official guide](https://help.webex.com/en-us/article/jr1i3r/Configure-Local-Gateway-on-Cisco-IOS-XE-for-Webex-Calling)
 - [Webex Dial Plan Configuration](https://help.webex.com/en-us/article/n0xb944/Configure-trunks,-route-groups,-and-dial-plans-for-Webex-Calling#Cisco_Reference.dita_cd257f9a-1936-4b97-a473-64681b672bd3)
 - [Webex Dial Plan by Country](https://help.webex.com/en-us/article/757iyo/Dial-plans-by-country#topic_hx1_mct_msb)
