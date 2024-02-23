@@ -1,7 +1,7 @@
 # Webex Calling with CUBE - Free Webinar (24/Feb/2024 08:00PM IST)
 Unlock the Power of **Webex Calling with CUBE Local Gateway!** Join our free webinar and discover how this integration revolutionizes communication. Whether you're a seasoned IT professional or just embarking on your Unified Communications journey, this webinar aims to provide valuable knowledge and practical advice to help you leverage these cutting-edge technologies effectively. Let's start this journey together as we unlock the full potential of **Webex Calling with vCUBE**.
 <p align="center">
-  <img src="https://github.com/vpjaseem/collaboration/assets/67306692/2a27ebb3-74bd-44d2-a97f-0360c447d061" width="50%"  height="50%">
+  <img src="https://github.com/vpjaseem/collaboration/assets/67306692/ad583cdb-6eb5-450c-b50f-214a771932f9" width="50%"  height="50%">
 </p>
 
 ## Prerequisites
