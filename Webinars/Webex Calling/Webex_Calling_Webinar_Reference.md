@@ -25,8 +25,6 @@ The entire lab can be build absolutely free of cost.
 ## Call Routing Architecture
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/cd82d97c-6805-4b33-8dd6-4ca7910e2d3c)
 
-
-
 ## Dial Plan Design
 1. Trunk
 2. Route Group,
