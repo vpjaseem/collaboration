@@ -38,15 +38,268 @@ Image here
 3. Assign License and Location and Number to the user
 
 **CUBE Side**
-1. Webex Trunk and CUBE Configuration Mapping
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/d0d00612-64cf-4060-803e-1cf46ebfd6cf)
+1. CUBE Configurations
+```
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!Details copied from Webex Control Hub
 
-2. CUBE Configurations
+Trunk Group OTG/DTG
+cube01-trunk2692_lgu
+
+Outbound Proxy Address
+dfw08.sipconnect-us.bcld.webex.com
+
+Registrar Domain
+98027369.us10.bcld.webex.com
+
+Line/Port
+cube01-trunk0683_LGU@98027369.us10.bcld.webex.com
+
+Username: cube01-trunk2692_LGU
+Password: P0r40Bbupw
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+
+!!License Configuration for vCUBE
+!
+license boot level network-premier addon dna-premier
+do write
+exit
+reload
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!Take a configuration backup to router flash
+!
+copy running-config flash:
+Destination filename [running-config]? base-config-backup
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+
+!!Encrypting the password provided by Control Hub
+!
+key config-key password-encrypt PASSWORD
+password encryption aes
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+
+!!Self Signed Certificate Configuration for vCUBE
+!
+crypto pki trustpoint sampleTP
+ revocation-check crl
+!
+sip-ua
+ crypto signaling default trustpoint sampleTP cn-san-validate server
+ transport tcp tls v1.2
+ tcp-retry 1000
+!
+crypto pki trustpool import clean url http://www.cisco.com/security/pki/trs/ios_core.p7b
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!Global SIP Configuration
+!
+voice service voip
+ ip address trusted list
+  ipv4 128.177.14.0 255.255.255.128 !Webex Calling IPs
+  ipv4 128.177.36.0 255.255.255.192
+  ipv4 199.59.64.0 255.255.255.128
+  ipv4 185.115.196.0 255.255.255.128
+  ipv4 139.177.64.0 255.255.255.0
+  ipv4 139.177.72.0 255.255.255.0
+  ipv4 199.19.199.0 255.255.255.0
+  ipv4 199.19.196.0 255.255.254.0
+  ipv4 170.133.128.0 255.255.192.0
+  ipv4 170.72.0.0 255.255.0.0
+  ipv4 150.253.209.128 255.255.255.128
+  ipv4 135.84.168.0 255.255.248.0
+  ipv4 23.89.0.0 255.255.0.0
+  ipv4 85.119.56.0 255.255.254.0
+
+  ipv4 54.171.127.192 255.255.255.192 !Twilio Service Provider IPs
+  ipv4 54.171.127.192 255.255.255.192
+  ipv4 54.244.51.0 255.255.255.0
+  ipv4 54.172.60.0 255.255.254.0
+  ipv4 54.172.60.0 255.255.255.252
+  ipv4 54.244.51.0 255.255.255.252
+  ipv4 54.171.127.192 255.255.255.252
+  ipv4 35.156.191.128 255.255.255.252
+  ipv4 54.65.63.192 255.255.255.252
+  ipv4 54.169.127.128 255.255.255.252
+  ipv4 54.252.254.64 255.255.255.252
+  ipv4 177.71.206.192 255.255.255.252
+  exit
+ exit
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!SIP Global Commands
+!
+voice service voip
+  media bulk-stats
+  rtp-port range 16384 32766
+  allow-connections sip to sip
+  no supplementary-service sip refer
+  no supplementary-service sip handle-replaces
+  fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+  trace
+  media statistics
+ stun
+  stun flowdata agent-id 1 boot-count 4
+  stun flowdata shared-secret 0 Password123$
+  exit
+ sip
+  asymmetric payload full
+  early-offer forced
+  g729 annexb-all
+  exit 
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!SIP Profile for Webex Call
+!
+voice class sip-profiles 1
+ rule 9 request ANY sip-header SIP-Req-URI modify "sips:(.*)" "sip:\1"
+ rule 10 request ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+ rule 11 request ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+ rule 12 request ANY sip-header Contact modify "<sips:(.*)>" "<sip:\1;transport=tls>"
+ rule 13 response ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+ rule 14 response ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+ rule 15 response ANY sip-header Contact modify "<sips:(.*)" "<sip:\1"
+ rule 20 request ANY sip-header From modify ">" ";otg=TRUNK_GROUP_OTG>"
+ rule 30 request ANY sip-header P-Asserted-Identity modify "sips:(.*)" "sip:\1"
+ rule 31 request INVITE sip-header Diversion modify "Diversion:(.*)@twilio.com(.*)" "" 
+!
+!!SIP Profile for Twilio PSTN Call
+!
+voice class sip-profiles 2
+ request REINVITE sip-header From modify "(<.*:.*)(@.*>)" "\1@TERMINATION.pstn.twilio.com>"
+ request CANCEL sip-header From modify "(<.*:.*)(@.*>)" "\1@TERMINATION.pstn.twilio.com>"
+ request INVITE sip-header To modify "(<.*:.*)(@.*>)" "\1@TERMINATION.pstn.twilio.com>"
+ request REINVITE sip-header To modify "(<.*:.*)(@.*>)" "\1@TERMINATION.pstn.twilio.com>"
+ request INVITE sip-header From modify "(<.*:.*)(@.*>)" "\1@TERMINATION.pstn.twilio.com;user=phone>"
+ request INVITE sip-header P-Asserted-Identity modify "(<.*:.*)(@.*>)" "\1@TERMINATION.pstn.twilio.com;user=phone>"
+ request ANY sip-header Contact modify "@.*:" "@CUBE_PUBLIC_IP:"
+ response ANY sip-header Contact modify "@.*:" "@CUBE_PUBLIC_IP:"
+!
+voice class uri 1 sip
+ pattern dtg=TRUNK_GROUP_OTG
+!
+voice class codec 1
+ codec preference 1 g711ulaw
+ codec preference 2 g711alaw
+ codec preference 3 g729r8
+!
+voice class srtp-crypto 1
+ crypto 1 AES_CM_128_HMAC_SHA1_80
+!
+voice class stun-usage 1
+ stun usage firewall-traversal flowdata
+ stun usage ice lite
+!
+voice class e164-pattern-map 1
+  description WEBEX DID NUMBERS
+  e164 +1..........
+!
+voice class dpg 2
+ description WEBEX TO TWILIO PSTN
+!
+voice class dpg 4
+ description TWILIO PSTN TO WEBEX
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!Map Control Hub parameters to Local Gateway Tenant configuration
+!
+voice class tenant 1
+  registrar dns:1_REGISTRAR_DOMAIN scheme sips expires 240 refresh-ratio 50 tcp tls
+  credentials number 2_LINE_PORT_TILL_LGU username 3_USER_NAME password 0 4_PASSWORD realm BroadWorks
+  authentication username 3_USER_NAME password 0 4_PASSWORD realm BroadWorks
+  authentication username 3_USER_NAME password 0 4_PASSWORD realm 1_REGISTRAR_DOMAIN
+  no remote-party-id
+  sip-server dns:1_REGISTRAR_DOMAIN
+  connection-reuse
+  srtp-crypto 1
+  session transport tcp tls
+  url sips
+  error-passthru
+  asserted-id pai
+  bind control source-interface GigabitEthernet1
+  bind media source-interface GigabitEthernet1
+  no pass-thru content custom-sdp
+  sip-profiles 1
+  outbound-proxy dns:5_OUTBOUND_PROXY
+  privacy-policy passthru
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!! Twilio PSTN Tenant
+!
+voice class tenant 2
+  sip-server dns:TERMINATION.pstn.twilio.com
+  session transport udp
+  asserted-id pai
+  bind control source-interface GigabitEthernet1
+  bind media source-interface GigabitEthernet1
+  sip-profiles 2
+  early-offer forced
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+dial-peer voice 1 voip
+ description INCOMING FROM WEBEX
+ session protocol sipv2
+ destination dpg 2
+ incoming uri request 1
+ voice-class codec 1
+ voice-class stun-usage 1
+ voice-class sip tenant 1
+ dtmf-relay rtp-nte
+ srtp
+!
+dial-peer voice 2 voip
+ description OUTGOING TO TWILIO PSTN
+ destination-pattern .T
+ rtp payload-type comfort-noise 13
+ session protocol sipv2
+ session target sip-server
+ voice-class codec 1
+ voice-class sip tenant 2
+ dtmf-relay rtp-nte
+!
+dial-peer voice 3 voip
+ description INCOMING FROM TWILIO PSTN
+ session protocol sipv2
+ destination dpg 4
+ incoming called e164-pattern-map 1
+ voice-class codec 1
+ voice-class sip tenant 2
+ dtmf-relay rtp-nte
+!
+dial-peer voice 4 voip
+ description Outgoing OUTGOING TO WEBEX
+ destination-pattern BAD.BAD
+ session protocol sipv2
+ session target sip-server
+ voice-class codec 1
+ voice-class stun-usage 1
+ voice-class sip tenant 1
+ no voice-class sip history-info
+ no voice-class sip registration passthrough
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+voice class dpg 2
+ description Webex to PSTN
+ dial-peer 2 preference 1
+!
+voice class dpg 4
+ description PSTN to Webex
+ dial-peer 4 preference 1
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 ```
-Configurations here!
-```
+2. Webex Trunk and CUBE Configuration Mapping - [Map Webex Control Hub Trunk paramters to CUBE](https://drive.google.com/file/d/19ASajylH_8MTQX5PG4nKPCwjBmFA9j9H/view?usp=sharing)
+   ![image](https://github.com/vpjaseem/collaboration/assets/67306692/4e1da36b-e40e-4921-8fb6-d6f27af7f0f7)
+   
 **PSTN Twilio Side**
-1. sdzzzz
+1. Trunk = WEBEX-CALLING-CUBE-TRUNK, Secure Trunking = Disabled, Symmetric RTP = Enabled, Call Transfer = Enabled
+2. Termination = ajwxcall.pstn.twilio.com
+3. Origination  = sip:X.X.X.X Where X.X.X.X is the Public IP of CUBE
+4. IP Access Control List = WEBEX-CALLING-CUBE-IP = X.X.X.X Where X.X.X.X is the Public IP of CUBE
+
 
 ## Courses offered by AJ Labs
 Below are the Training course offered by AJ Labs.
