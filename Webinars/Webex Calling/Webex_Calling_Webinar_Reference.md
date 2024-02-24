@@ -36,6 +36,10 @@ The entire lab can be build absolutely free of cost.
 **Azure**
 1. Azure Marketplace > Cisco Virtual CUBE Session Border Controller > Create > Select Subscription and follow the VM creation wizard and complete the deployment
 2. Configure Network Security Group to allow required ports (SSH 22, SIP 5060 - 5080, Media 16384 - 32787)
+   ![image](https://github.com/vpjaseem/collaboration/assets/67306692/0afa2643-c6d2-49c3-80cb-2f7bea6941fa)
+   ![image](https://github.com/vpjaseem/collaboration/assets/67306692/215d5c5c-b729-495d-bc3a-601baaa9b833)
+
+
 
 **Webex Side**
 1. Add Location (I have used this address 2770 E Trinity Mls Rd, Carrollton, TX 75006, USA), Add Trunk, Route Group, Dial Plan, Add Numbers
