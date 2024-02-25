@@ -4,11 +4,18 @@ Unlock the Power of **Webex Calling with CUBE Local Gateway!** Join our free web
   <img src="https://github.com/vpjaseem/collaboration/assets/67306692/ad583cdb-6eb5-450c-b50f-214a771932f9" width="50%"  height="50%">
 </p>
 
+## Webinar Recordings
+Whatch the entire recorded session of Webex Calling with vCUBE Local Gateway. We cover the vCUBE deployment in Azure, Webex Trunk Configuration, Dial Plan, PSTN integrations, etc.
+- [Webinar - Webex Calling with Local Gateway CUBE – Premise Based PSTN with Twilio and Azure vCUBE](Link)
+
 ## Prerequisites
 - Install [Webex App](https://www.webex.com/downloads.html) and try to join from PC (mobile app will have limited experience)
 - Basic understanding of Webex Control Hub
 - Basic Knowledge of CUBE (Dial-Peers, SIP)
 - Basic understanding of Cloud Computing (not mandatory)
+
+## Webex Calling Options
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/cf12f950-bb40-4709-9fcc-83adf94c4e24)
 
 ## Lab Topology
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/77913cd2-899c-4472-8ab9-16b0ffd41109)
@@ -309,6 +316,9 @@ voice class dpg 4
 3. Origination  = sip:X.X.X.X Where X.X.X.X is the Public IP of CUBE
 4. IP Access Control List = WEBEX-CALLING-CUBE-IP = X.X.X.X Where X.X.X.X is the Public IP of CUBE
 
+## Debug Logs
+1. [Webex to PSTN Mobile](https://drive.google.com/file/d/18fr9SDxVfNWXp_WLGShaBKLQ6gSPbrkY/view?usp=sharing)
+2. [PSTN Mobile to Webex](https://drive.google.com/file/d/17hsl4ZNopffdbbNxjPdKkKhVQJv0_qIg/view?usp=sharing)
 
 ## Courses offered by AJ Labs
 Below are the Training course offered by AJ Labs.
