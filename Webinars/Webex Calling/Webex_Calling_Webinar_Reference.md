@@ -6,7 +6,7 @@ Unlock the Power of **Webex Calling with CUBE Local Gateway!** Join our free web
 
 ## Webinar Recordings
 Whatch the entire recorded session of Webex Calling with vCUBE Local Gateway. We cover the vCUBE deployment in Azure, Webex Trunk Configuration, Dial Plan, PSTN integrations, etc.
-- [Webinar - Webex Calling with Local Gateway CUBE – Premise Based PSTN with Twilio and Azure vCUBE](Link)
+- [Webinar - Webex Calling with Local Gateway CUBE – Premise Based PSTN with Twilio and Azure vCUBE](https://youtu.be/L6A-XFuMSgA)
 
 ## Prerequisites
 - Install [Webex App](https://www.webex.com/downloads.html) and try to join from PC (mobile app will have limited experience)
