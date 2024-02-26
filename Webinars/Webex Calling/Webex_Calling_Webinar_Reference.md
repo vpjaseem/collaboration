@@ -352,6 +352,7 @@ Below are the Training course offered by AJ Labs.
 - [Twilio Elastic SIP Trunking with CUBE](https://assets.cdn.prod.twilio.com/documents/InteropGuide_Twilio_vCiscoUBE_CiscoUCM_Final_1.1.pdf)
 
 ## Webinar Unanswered Q&A
-1.      
-2.   
+1. Can we use Physical IP Phones with Webex UCM Calling?
+   Ans: No, Webex UCM Calling is for Webex App only. It behaves exactly like Jabber UDS / MRA setup. If you have Physical IP Phone, there is no requirement to register with Webex since you are still using CUCM for call routing. Hence the IP Phone registraion over MRA will help in this case.
+3.   
 
