@@ -5,6 +5,14 @@ do write
 exit
 !reload
 !
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!
+!!Take a configuration backup to router flash
+!
+copy running-config flash:
+Destination filename [running-config]? base-config-backup
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 
 !!Certificate Configuration for vCUBE
 !
@@ -285,6 +293,10 @@ voice class dpg 4
 voice class srtp-crypto 1
  crypto 1 AES_CM_128_HMAC_SHA1_80
 !
+voice service voip
+ sip
+  pass-thru headers 14
+!
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 !!Microsoft Teams Tenant Settings
 !
@@ -364,17 +376,27 @@ dial-peer voice 4 voip
  no vad
 !
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
-!
-voice service voip
- sip
-  pass-thru headers 14
-!
+
 voice class dpg 2
  dial-peer 2 preference 1
 !
 voice class dpg 4
  dial-peer 4 preference 1
 !
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!! Add ;ext= in the SIP INVITE towards Teams Side
+!
+voice class sip-profiles 11
+ rule 400 request INVITE sip-header SIP-Req-URI modify "(sip:)(\+.*)(....)(@sip.*)" "\1\2\3;ext=\3\4"
+ rule 401 request INVITE sip-header To modify "(sip:)(\+.*)(....)(@sip.*)" "\1\2\3;ext=\3\4"
+!
+
+!! Remove ;ext= from the SIP INVITE towards Twilio PSTN Side. In my case this was not required, CUBE isn't processing the ;ext part.
+!
+voice class sip-profiles 21
+ request ANY sip-header From modify "(\+.*)(;ext=....)(.*)" "\1\3"
+!
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
