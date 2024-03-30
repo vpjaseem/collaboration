@@ -14,20 +14,19 @@ Destination filename [running-config]? base-config-backup
 !
 ***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
 
-!!Certificate Configuration for vCUBE
-!
-!! Cleaning old Key Pairs, Only use if you wanted to clean the keys !! Otherwise identify the key with show crypto key mypubkey rsa
-!
-crypto key zeroize rsa
-!
-
 !! Adding Name Server, Domain Name and NTP Server !!
 !
 ip name-server 208.67.222.222 208.67.220.220 8.8.8.8
 ip domain name ajcollab.com
 ntp server 216.239.35.8
 !
-
+***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***---***
+!!Certificate Configuration for vCUBE
+!
+!! Cleaning old Key Pairs, Only use if you wanted to clean the keys !! Otherwise identify the key with show crypto key mypubkey rsa
+!
+crypto key zeroize rsa
+!
 !! Generate Key Pair!! 
 !
 crypto key generate rsa general-keys label SBC-RSA-KEY modulus 2048 exportable
