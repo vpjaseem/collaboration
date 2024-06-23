@@ -8,4 +8,16 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 
 ## Webinar Recordings
 Whatch the entire recorded session of Gen-AI with Genesys AI - Building a Complete Genesys AI Chatbot from Scratch.
-- [Webinar - Gen-AI with Genesys AI - Building a Complete Genesys AI Chatbot from Scratch](https://link)
+- Will be available later
+
+## Prerequisites
+- Install Zoom App: [Windows](https://zoom.us/download?os=win) | [MAC](https://zoom.us/download?os=mac) and try to join from PC (mobile app will have limited experience)
+- Basic understanding of Contact Center, IVR, Call Queue
+- Basic Knowledge of Web applications (HTML, Web Hosting, etc.)
+- Though the session is Advanced, there are no prerequisites. Anyone can attend!
+
+## Genesys Chatbot Flow Chart
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/9a11e155-ee0b-4653-8ac9-ac89e62e22e6)
+
+## Gen-AI Communication Flow
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/93d93d3f-0cf7-471c-a0ee-284c4c090f00)
