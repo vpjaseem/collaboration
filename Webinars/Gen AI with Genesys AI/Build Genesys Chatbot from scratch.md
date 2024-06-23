@@ -22,8 +22,13 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 ## Configuration Steps
 1. Basic Genesys Configurations (Agents, Agent Profiles, ACD Queue)
 2. Inbound Message Flow
-3. Digitla Bot Flow
-4. Deploying the Javascript code in production website [ajcollab.com](https://ajcollab.com)
+3. Digitla Bot Flow Configuration
+4. Digitla Bot Flow Deployment
+5. Deploying the Javascript code in production website [ajcollab.com](https://ajcollab.com)
+6. Salesforce basic configuration (User management, Account Settings, Add Contact, Add New case)
+7. Salesforce CRM APIs (**GET_RECENT_CASE_BY_NUMBER** and **GET_CASE_COMMENT_BY_CASE_ID**)
+8. Salesforce and Genesys CX integration with Advanced Genesys Data Actions
+9. Experince the fully functional Gen-AI Chatbot
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
