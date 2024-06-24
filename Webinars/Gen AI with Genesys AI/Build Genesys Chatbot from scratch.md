@@ -184,7 +184,7 @@ Further customize the bot to interact with customer using Natural Language Under
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/93d93d3f-0cf7-471c-a0ee-284c4c090f00)
 
 ### 11. Fine-Tune the Genesys AI Bot
-- Settings > Bot Flow, Event Handling >
+- Settings > Bot Flow, Event Handling
 - Optimization Dashboard > Utternace History
 
 ### 12. Experience the fully functional Gen-AI Chatbot
