@@ -21,10 +21,10 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 
 ## Configuration Steps
 ### 1. Basic Genesys Configurations (Agents, Agent Profiles, ACD Queue)
-Admin > People > Select the Agent > Role > Assign User Role User
-Admin > People > Select the Agent > Person Details > Add New Section > Agent > Name: Aggent 01
-Admin > Contact Center > Wrap-up Codes > Add > GENERAL ENQUIRY, DEBIT CARD ISSUE, TRANSACTION ISSUE
-Admin > Contact Center > Queue > Add a Queue > AJ_BANK_CUSTOMER_SUPPORT, Associate wrap-up codes and members to it (Rest everything default)
+- Admin > People > Select the Agent > Role > Assign User Role User
+- Admin > People > Select the Agent > Person Details > Add New Section > Agent > Name: Aggent 01
+- Admin > Contact Center > Wrap-up Codes > Add > GENERAL ENQUIRY, DEBIT CARD ISSUE, TRANSACTION ISSUE
+- Admin > Contact Center > Queue > Add a Queue > AJ_BANK_CUSTOMER_SUPPORT, Associate wrap-up codes and members to it (Rest everything default)
 
 #### 2. Inbound Message Flow
 
