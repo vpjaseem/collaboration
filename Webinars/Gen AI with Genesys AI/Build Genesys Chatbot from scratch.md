@@ -180,6 +180,8 @@ Further customize the bot to interact with customer using Natural Language Under
 - Configure Intents, Utterances and Slots
 - Build the logical flow
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/93d93d3f-0cf7-471c-a0ee-284c4c090f00)
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/81763795-51af-4084-bba6-090fb66d0f86)
+
 
 #### Fine-Tune the Genesys AI Bot
 - Settings > Bot Flow, Event Handling >
