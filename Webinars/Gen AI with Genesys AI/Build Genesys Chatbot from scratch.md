@@ -16,23 +16,76 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 ## Genesys Chatbot Flow Chart
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/9a11e155-ee0b-4653-8ac9-ac89e62e22e6)
 
-## Gen-AI Communication Flow
-![image](https://github.com/vpjaseem/collaboration/assets/67306692/93d93d3f-0cf7-471c-a0ee-284c4c090f00)
-
 ## Configuration Steps
 ### 1. Basic Genesys Configurations (Agents, Agent Profiles, ACD Queue)
 - Admin > People > Select the Agent > Role > Assign User Role User
-- Admin > People > Select the Agent > Person Details > Add New Section > Agent > Name: Aggent 01
+- Admin > People > Select the Agent > Person Details > Add New Section > Agent > Name: Agent 01
 - Admin > Contact Center > Wrap-up Codes > Add > GENERAL ENQUIRY, DEBIT CARD ISSUE, TRANSACTION ISSUE
 - Admin > Contact Center > Queue > Add a Queue > AJ_BANK_CUSTOMER_SUPPORT, Associate wrap-up codes and members to it (Rest everything default)
 
 #### 2. Inbound Message Flow
+- Architect > Inbound Message > Start and End Nodes only > Publish
+  
+#### 3. Messenger Configuration
+- Message > Messenger Configuration > New Configuration 
 
-#### 3. Digital Bot Flow Configuration
+|#| CONFIGURATION ITEM | VALUE |
+|-|---------------------------------------|-------------------|
+1 | Set your Launcher Button Visibility	  | Show              |
+2 | User Interface                        | On                |
+3	| Messenger Homescreen	                | On                |
+4	| Add a logo	                          | *Upload Logo*     |
+5	| Select your Messenger Color           |	*Pick a Color*    |
+6	| Align to	                            | Auto              |
+7	| Select your Supported Languages	      | English           |
+8	| Labels	                              | *Enter your own*  |
+9	| Default Language	                    | English           |
+10 | Messaging							| Enabled                        |
+11 | Humanize your Conversation			| On                             |
+12 | Bot Name							| *Enter your own*               |
+13 | Bot Avatar							| *Upload Profile Image for bot* |
+14 | Rich Text Formatting				| On                             |
+15 | File Attachment					| On                             |
+16 | Automatically Start Conversations	| Off                            |
+17 | Attachments						| On                             |
+18 | Typing Indicators					| On                             |
+19 | Authentication						| Off                            |
+20 | Co-browse							| Off                            |
+21 | Knowledge Articles					| Off                            |
+22 | Predictive Engagement				| Off                            |
+
+#### 4. Messenger Deployment
+- Message > Messenger Deployment > New Deployment > Select Messenger Configuration and Inbound Message Flow
+- Copy the Java Script
+
+#### 5. Deploying the JavaScript code in production website [ajcollab.com](https://ajcollab.com)
+- Access the web application and paste the code in-between \<body\>SCRIPT_HERE\<\/body\>
+```
+<body>
+<script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.usw2.pure.cloud/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-usw2',
+    deploymentId: 'XXXXXXXX-a18e-XXXX-XXXX-XXXXXXXXb845'
+  });
+</script>
+</body>
+
+```
 #### 4. Digital Bot Flow Deployment
-#### 5. Deploying the Javascript code in production website [ajcollab.com](https://ajcollab.com)
+- Architect > Digital Bot Flows > Add
+- Go back to Inbound Message Flow and create new Task to Transfer to the above bot flow and at the end Transfer to ACD (Optional)
+- Inbound Message Flow starting task should Greet (Send response) and Call Task to the Transfer Task
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/32f53929-c749-4982-978e-2c2a7f45c03d)
 
-### 6. Salesforce basic configuration
+### 5. Salesforce basic configuration
 #### 1. Contact Page layouts Customization
 While adding external contact, the Account Name is mandatory, we can disable that.
 Advanced Setup > Object Manager > Select Contact > Page layouts > Contact Layout > Account Name > Uncheck Required checkbox
@@ -47,7 +100,7 @@ Cases > New > Add a case (You must associate the case with Contact Name created 
 While integrating with Genesys, we need a user to authenticate with Salesforce API.
 Advanced Setup > Users > New > Email: apiuser2@ajcollab.com > Profile: System Administrator
 
-Note: In production scenarios, make sure you get this from the Salesforce Administrator and also, this account should have access to resources where it is intented to access (Implement RBA in Salesforce)
+Note: In production scenarios, make sure you get this from the Salesforce Administrator and also, this account should have access to resources where it is intended to access (Implement RBA in Salesforce)
 
 ### 5. Generate Security Token for apiuser2@ajcollab.com
 Login to Salesforce as apiuser2@ajcollab.com > Settings > Reset My Security Token
@@ -57,8 +110,8 @@ Token will be emailed, note the Token for future use
 Integrations > Salesforce Data Actions > Provide apiuser2@ajcollab.com, Password and Security Token
 Activate the integration
 
-### 7. Salesforce CRM APIs & Genesys Data Action 
-#### 1. GET_RECENT_CASE_BY_NUMBER - Colelct the last opened case by external user with contact number
+### 6. Salesforce CRM APIs & Genesys Data Action 
+#### 1. GET_RECENT_CASE_BY_NUMBER - Collect the last opened case by external user with contact number
 ##### Postman URL
 ```
 {{_endpoint}}/services/data/v{{version}}/query/?q=SELECT Id, CaseNumber, Subject, Description FROM Case WHERE ContactPhone='%2B12146605526' AND IsClosed = false ORDER BY LastModifiedDate DESC LIMIT 1
@@ -120,8 +173,18 @@ Activate the integration
 }
 
 ```
+#### Natural Language Understanding (NLU) and AI Business Logic in Digital Bot Flow
+Further customize the bot to interact with customer using Natural Language Understanding (NLU)
+- Add 2 TASKs to address the business use cases
+- Configure Intents, Utterances and Slots
+- Build the logical flow
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/93d93d3f-0cf7-471c-a0ee-284c4c090f00)
 
-#### 10. Experince the fully functional Gen-AI Chatbot
+#### Fine-Tune the Genesys AI Bot
+- Settings > Bot Flow, Event Handling >
+- Optimization Dashboard > Utternace History
+
+#### 10. Experience the fully functional Gen-AI Chatbot
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
@@ -152,4 +215,4 @@ Below are the Training courses offered by AJ Labs.
 3. **Advanced Cisco Collaboration Video Training [On demand Video Recordings]** (vmware, Windows, CUCM, CUC, IMP, Expressway, CUBE, CUBE HA, SIP Deep Dive, Log Analysis, UC Upgrade, MRA, B2B, Webex) - [Topic Summary](https://drive.google.com/file/d/12KOZ5IOxI58vu2E_Vi0uYr6Y2Rc4LF6J/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/12xrl_SdC4XMCGJe8yB5m778TorUhtChM/view?usp=sharing) | [Free eBook](https://drive.google.com/file/d/1dPrYSzh5ymVe5Zadum3wW9adl3x7tLBB/view?usp=sharing)
 
 ## Webinar Unanswered Q&A
-  
+1. 
