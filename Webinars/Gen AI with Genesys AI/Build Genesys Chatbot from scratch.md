@@ -22,13 +22,45 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 ## Configuration Steps
 1. Basic Genesys Configurations (Agents, Agent Profiles, ACD Queue)
 2. Inbound Message Flow
-3. Digitla Bot Flow Configuration
-4. Digitla Bot Flow Deployment
+3. Digital Bot Flow Configuration
+4. Digital Bot Flow Deployment
 5. Deploying the Javascript code in production website [ajcollab.com](https://ajcollab.com)
-6. Salesforce basic configuration (User management, Account Settings, Add Contact, Add New case)
-7. Salesforce CRM APIs (**GET_RECENT_CASE_BY_NUMBER** and **GET_CASE_COMMENT_BY_CASE_ID**)
-8. Salesforce and Genesys CX integration with Advanced Genesys Data Actions
-9. Experince the fully functional Gen-AI Chatbot
+
+### 6. Salesforce basic configuration
+#### 1. Contact Page layouts Customization
+While adding external contact, the Account Name is mandatory, we can disable that.
+Advanced Setup > Object Manager > Select Contact > Page layouts > Contact Layout > Account Name > Uncheck Required checkbox
+
+#### 2. Add an External Contact
+Cases > New > Add a New Contact with Phone and Email
+
+#### 3. Add an Case
+Cases > New > Add a case (You must associate the case with Contact Name created in the previous step)
+
+#### 4. API User for Genesys Integration
+While integrating with Genesys, we need a user to authenticate with Salesforce API.
+Advanced Setup > Users > New > Email: apiuser2@ajcollab.com > Profile: System Administrator
+
+Note: In production scenarios, make sure you get this from the Salesforce Administrator and also, this account should have access to resources where it is intented to access (Implement RBA in Salesforce)
+
+### 5. Generate Security Token for apiuser2@ajcollab.com
+Login to Salesforce as apiuser2@ajcollab.com > Settings > Reset My Security Token
+Token will be emailed, note the Token for future use
+
+### 7. Salesforce CRM APIs (**GET_RECENT_CASE_BY_NUMBER** and **GET_CASE_COMMENT_BY_CASE_ID**)
+#### Postman URL
+```
+{{_endpoint}}/services/data/v{{version}}/query/?q=SELECT Id, CaseNumber, Subject, Description FROM Case WHERE ContactPhone='%2B12146605526' AND IsClosed = false ORDER BY LastModifiedDate DESC LIMIT 1
+```
+#### Genesys Integration URL
+```
+/services/data/v60.0/query/?q=$esc.url("SELECT Id, CaseNumber, Subject, Description FROM Case WHERE ContactPhone='${input.PHONE_NUMBER}' AND IsClosed = false ORDER BY LastModifiedDate DESC LIMIT 1")
+```
+
+
+
+9. Salesforce and Genesys CX integration with Advanced Genesys Data Actions
+10. Experince the fully functional Gen-AI Chatbot
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
@@ -46,6 +78,8 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 - **CUCM - MS Teams Integration with CUBE** | [Reference](https://github.com/vpjaseem/collaboration/blob/main/Webinars/CUCM_MS_Teams_Integration.md) | [Part 1](https://youtu.be/3q0DsU73KpI) | [Part 2](https://youtu.be/PB83udFEhFg)
 - [Webex Calling with Local Gateway](https://youtu.be/L6A-XFuMSgA?si=NaVT9KJOBrodYTZk)
 - [Install SSL Certificates in Cisco Router / CUBE](https://youtu.be/8pUtDOTw-HM?si=9z0fIDQJraC-qvgG)
+- [Salesforce CRM Free Subscription](https://www.salesforce.com/in/form/signup/freetrial-sales/)
+- [Salesforce Platform APIs for Postman](https://www.postman.com/salesforce-developers/workspace/salesforce-developers/collection/12721794-67cb9baa-e0da-4986-957e-88d8734647e2)
 
 ## Courses offered by AJ Labs
 Below are the Training courses offered by AJ Labs.
