@@ -206,6 +206,7 @@ Further customize the bot to interact with customer using Natural Language Under
 - [Webex Calling with Local Gateway](https://youtu.be/L6A-XFuMSgA?si=NaVT9KJOBrodYTZk)
 - [Install SSL Certificates in Cisco Router / CUBE](https://youtu.be/8pUtDOTw-HM?si=9z0fIDQJraC-qvgG)
 - [Salesforce CRM Free Subscription](https://www.salesforce.com/in/form/signup/freetrial-sales/)
+- Salesforce APIs [Search API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search.htm) | [Salesforce Object Query Language - SOQL and Salesforce Object Search Language - SOSL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_sosl_intro.htm)
 - [Salesforce Platform APIs for Postman](https://www.postman.com/salesforce-developers/workspace/salesforce-developers/collection/12721794-67cb9baa-e0da-4986-957e-88d8734647e2)
 
 ## Courses offered by AJ Labs
