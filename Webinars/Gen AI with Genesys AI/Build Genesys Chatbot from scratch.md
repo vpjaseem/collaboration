@@ -20,11 +20,17 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/93d93d3f-0cf7-471c-a0ee-284c4c090f00)
 
 ## Configuration Steps
-1. Basic Genesys Configurations (Agents, Agent Profiles, ACD Queue)
-2. Inbound Message Flow
-3. Digital Bot Flow Configuration
-4. Digital Bot Flow Deployment
-5. Deploying the Javascript code in production website [ajcollab.com](https://ajcollab.com)
+### 1. Basic Genesys Configurations (Agents, Agent Profiles, ACD Queue)
+Admin > People > Select the Agent > Role > Assign User Role User
+Admin > People > Select the Agent > Person Details > Add New Section > Agent > Name: Aggent 01
+Admin > Contact Center > Wrap-up Codes > Add > GENERAL ENQUIRY, DEBIT CARD ISSUE, TRANSACTION ISSUE
+Admin > Contact Center > Queue > Add a Queue > AJ_BANK_CUSTOMER_SUPPORT, Associate wrap-up codes and members to it (Rest everything default)
+
+#### 2. Inbound Message Flow
+
+#### 3. Digital Bot Flow Configuration
+#### 4. Digital Bot Flow Deployment
+#### 5. Deploying the Javascript code in production website [ajcollab.com](https://ajcollab.com)
 
 ### 6. Salesforce basic configuration
 #### 1. Contact Page layouts Customization
@@ -47,20 +53,75 @@ Note: In production scenarios, make sure you get this from the Salesforce Admini
 Login to Salesforce as apiuser2@ajcollab.com > Settings > Reset My Security Token
 Token will be emailed, note the Token for future use
 
-### 7. Salesforce CRM APIs (**GET_RECENT_CASE_BY_NUMBER** and **GET_CASE_COMMENT_BY_CASE_ID**)
-#### Postman URL
+### 6. Genesys Integration with Salesforce CRM APIs
+Integrations > Salesforce Data Actions > Provide apiuser2@ajcollab.com, Password and Security Token
+Activate the integration
+
+### 7. Salesforce CRM APIs & Genesys Data Action 
+#### 1. GET_RECENT_CASE_BY_NUMBER - Colelct the last opened case by external user with contact number
+##### Postman URL
 ```
 {{_endpoint}}/services/data/v{{version}}/query/?q=SELECT Id, CaseNumber, Subject, Description FROM Case WHERE ContactPhone='%2B12146605526' AND IsClosed = false ORDER BY LastModifiedDate DESC LIMIT 1
 ```
-#### Genesys Integration URL
+##### Genesys Integration Data Action URL
 ```
 /services/data/v60.0/query/?q=$esc.url("SELECT Id, CaseNumber, Subject, Description FROM Case WHERE ContactPhone='${input.PHONE_NUMBER}' AND IsClosed = false ORDER BY LastModifiedDate DESC LIMIT 1")
 ```
+##### Genesys Data Action Translations (JSONPath Expression)
+```
+{
+  "translationMap": 
+  {
+    "CaseNumber": "$.records[0].CaseNumber",
+    "CaseId": "$.records[0].Id",
+    "Description": "$.records[0].Description",
+    "Subject": "$.records[0].Subject"
+  },
 
+  "translationMapDefaults": 
+  {
+    "CaseNumber": "\"UNKNOWN\"",
+    "CaseId": "\"UNKNOWN\"",
+    "Description": "\"UNKNOWN\"",
+    "Subject": "\"UNKNOWN\""
+  },
 
+  "successTemplate": "{\"CaseId\": ${CaseId}, \"CaseNumber\": ${CaseNumber}, \"Subject\": ${Subject}, \"Description\": ${Description}}"
+}
 
-9. Salesforce and Genesys CX integration with Advanced Genesys Data Actions
-10. Experince the fully functional Gen-AI Chatbot
+```
+#### 2. GET_CASE_COMMENT_BY_CASE_ID - Collect the last case comment by Case ID
+##### Postman URL
+```
+{{_endpoint}}/services/data/v{{version}}/query/?q=SELECT CommentBody, CreatedDate FROM CaseComment WHERE ParentId='500IS0000044q1CYAQ' ORDER BY LastModifiedDate DESC LIMIT 1
+```
+##### Genesys Integration Data Action URL
+```
+/services/data/v60.0/query/?q=$esc.url("SELECT CommentBody, CreatedDate FROM CaseComment WHERE ParentId='${input.caseId}' ORDER BY LastModifiedDate DESC LIMIT 1")
+```
+
+##### Genesys Data Action Translations (JSONPath Expression)
+```
+{
+  "translationMap": 
+  {
+    "CreatedDate": "$.records[0].CreatedDate",
+    "CommentBody": "$.records[0].CommentBody"
+  },
+  
+  "translationMapDefaults": 
+  {
+    "CreatedDate": "\"UNKNOWN\"",
+    "CommentBody": "\"UNKNOWN\""
+  },
+
+  "successTemplate": "{\"CreatedDate\": ${CreatedDate}, \"CommentBody\": ${CommentBody}}"
+
+}
+
+```
+
+#### 10. Experince the fully functional Gen-AI Chatbot
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
