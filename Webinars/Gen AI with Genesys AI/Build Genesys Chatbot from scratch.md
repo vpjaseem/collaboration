@@ -25,6 +25,8 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 
 ### 2. Inbound Message Flow
 - Architect > Inbound Message > AJ_BANK_MESSENGER_01_INBOUND_MESSAGE_FLOW >Start and End Nodes only > Publish
+- Initial State > Start > Send Response > Call Task (TRANSFER_TO_DIGITAL_BOT_FLOW)
+- TRANSFER_TO_DIGITAL_BOT_FLOW > Start > Call Digital Bot Flow > Transfer to ACD
   
 ### 3. Messenger Configuration
 - Message > Messenger Configuration > New Configuration 
@@ -175,7 +177,63 @@ Note: In production scenarios, make sure you get this from the Salesforce Admini
 ```
 ### 10. Natural Language Understanding (NLU) and AI Business Logic in Digital Bot Flow
 Further customize the bot to interact with customer using Natural Language Understanding (NLU)
-- Add 2 TASKs to address the business use cases
+- Initial Greeting > Start > Jump to Reusable Task > INITIAL_TASK
+- INITIAL_TASK > Wait for Input (This will trigger NLU)
+- Add 2 TASKs to address the business use cases (CASE_STATUS_TASK and TRANSFER_TO_AGENT_TASK)
+- CASE_STATUS_INTENT --> CASE_STATUS_TASK
+- CASE_STATUS_INTENT --> Utterances
+```
+1
+existing ticket
+case status
+What is the status of my case?
+Can you tell me the status of my case?
+Check the status of my case.
+I want to know the status of my case.
+How is my case progressing?
+Can you update me on my case?
+What's happening with my case?
+Provide the status of my case.
+Case status update, please.
+Is there any update on my case?
+How's my case doing?
+I need information on my case status.
+Can you give me a case status update?
+What's the current status of my case?
+Where is my case at right now?
+```
+- TRANSFER_TO_AGENT_INTENT --> TRANSFER_TO_AGENT_TASK
+- TRANSFER_TO_AGENT_INTENT --> Utterances
+```
+2
+transfer me
+realagent
+Start a chat with an agent.
+Connect me to a chat agent.
+Let me chat with a representative.
+Can I chat with an agent?
+I want to chat with an agent.
+Initiate a chat with a representative.
+Chat with a customer service agent.
+I need help via chat.
+Can you start a chat with an agent?
+Get me a chat agent.
+Chat with an agent, please.
+I need to chat with a customer support agent.
+Can I get some help via chat?
+Please start a chat with an agent.
+I want to chat with a live person.
+```
+- Slots (customer_number_slot > customer_number_slot_type > RegEx = \+?\d{7,15})
+- CASE_STATUS_TASK > Ask for Slot > Ask for Yes/ No >
+
+- No  > Update Data (clear the data) > Communicate > Jump to Reusable Task > CASE_STATUS_TASK
+- Yes > Call Data Action > GET_RECENT_CASE_BY_NUMBER >
+
+- Success > Decision (Task.CaseId != "UNKNOWN") > Yes > Communicate > "Your Existing case number is" 
+
+
+- TRANSFER_TO_AGENT_TASK > Start > Transfer to ACD
 - Configure Intents, Utterances and Slots
 ![image](https://github.com/vpjaseem/collaboration/assets/67306692/81763795-51af-4084-bba6-090fb66d0f86)
 
