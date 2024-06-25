@@ -1,12 +1,11 @@
-# Gen-AI with Genesys AI - Free Webinar (29/June/2024 08:30PM IST)
+# Gen-AI with Genesys AI - Free Webinar (29/June/2024 08:00PM IST)
 # Build & Deploy Advanced Genesys AI Chatbot
 Are you ready to dive into the world of Artificial Intelligence and revolutionize your Contact Center? Join our exclusive free webinar on **"Gen-AI with Genesys AI - Building a Complete Genesys AI Chatbot from Scratch"**
 
 In this webinar, you'll learn how to leverage the power of **Genesys AI** and **Gen-AI** to create a sophisticated chatbot that can enhance customer interactions, streamline operations, and provide exceptional user experiences. I will guide you through the entire process, from initial setup to deployment, ensuring you gain practical knowledge and hands-on skills.
 <p align="center">
-<img src="https://github.com/vpjaseem/collaboration/assets/67306692/e7fce97b-b7af-4a83-a0a8-e0d50726170b" width="50%"  height="50%">
+<img src="https://github.com/vpjaseem/collaboration/assets/67306692/61781bf1-db76-468c-869c-840b56197cbe" width="50%"  height="50%">
 </p>
-
 
 ## Prerequisites
 - Install Zoom App: [Windows](https://zoom.us/download?os=win) | [MAC](https://zoom.us/download?os=mac) and try to join from PC (mobile app will have limited experience)
@@ -198,7 +197,7 @@ Further customize the bot to interact with customer using Natural Language Under
 - Skills: Cisco UC, Microsoft UC, Genesys Cloud CX, Amazon Connect, Webex CC, Azure, AWS, Windows, vmware, Python, Automation
 - Certs: CCIE Collab #59174, Teams Voice Engineer, DevNet, CCNP DC, CCNP Ent, CCNP Security, AWS, Azure, vmware VCP, CKA
 - Mob: +91-859-0101-859 ([WhatsApp Preferred](https://wa.me/+918590101859))<br>
-- [LinkedIn](https://in.linkedin.com/in/abdul-jaseem)
+- [LinkedIn](https://in.linkedin.com/in/abdul-jaseem) | [Instagram](https://www.instagram.com/ajlabs.training/)
 - [YouTube](https://www.youtube.com/@aj-labs)
 
 ## Helpful Links
@@ -215,8 +214,10 @@ Below are the Training courses offered by AJ Labs.
 1. **Advanced Genesys Cloud Contact Center Training [Live Training]** (Genesys Cloud CX, Advanced Architect Flows, CRM Integrations, APIs, Middleware Development, Genesys AI, Google Dilogflow CX, Advanced Agent Scripting) - [Syllabus]() | Start Date **05/August/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5)
 
 2. **Advanced Cloud Collaboration [On demand Video Recordings]** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://drive.google.com/file/d/1ezFuS6ulvLfyg6PQZXBnnH3McsTaqMWH/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/19zRydHD4n0drATeoFcNbjbfUphrA-IzJ/view?usp=sharing)
-   
-3. **Advanced Cisco Collaboration Video Training [On demand Video Recordings]** (vmware, Windows, CUCM, CUC, IMP, Expressway, CUBE, CUBE HA, SIP Deep Dive, Log Analysis, UC Upgrade, MRA, B2B, Webex) - [Topic Summary](https://drive.google.com/file/d/12KOZ5IOxI58vu2E_Vi0uYr6Y2Rc4LF6J/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/12xrl_SdC4XMCGJe8yB5m778TorUhtChM/view?usp=sharing) | [Free eBook](https://drive.google.com/file/d/1dPrYSzh5ymVe5Zadum3wW9adl3x7tLBB/view?usp=sharing)
+
+3. **Microsoft Teams Direct Routing with AudioCodes, Ribbon, CUBE, AnyNode SBCs - Fast Track** (Direct Routing implementation, PSTN Integration, RegEx, All Enterprise SBCs, Troubleshooting of each SBCs with logs) - [Udemy](https://www.udemy.com/course/microsoft-teams-direct-routing-with-all-sbcs-part-of-ms-721/?referralCode=43FA284904FB9F8FC80D)
+
+4. **Advanced Cisco Collaboration Video Training [On demand Video Recordings]** (vmware, Windows, CUCM, CUC, IMP, Expressway, CUBE, CUBE HA, SIP Deep Dive, Log Analysis, UC Upgrade, MRA, B2B, Webex) - [Topic Summary](https://drive.google.com/file/d/12KOZ5IOxI58vu2E_Vi0uYr6Y2Rc4LF6J/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/12xrl_SdC4XMCGJe8yB5m778TorUhtChM/view?usp=sharing) | [Free eBook](https://drive.google.com/file/d/1dPrYSzh5ymVe5Zadum3wW9adl3x7tLBB/view?usp=sharing)
 
 ## Webinar Unanswered Q&A
 1. 
