@@ -8,7 +8,7 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 </p>
 
 ## Prerequisites
-- Install Zoom App: [Windows](https://zoom.us/download?os=win) | [MAC](https://zoom.us/download?os=mac) and try to join from PC (mobile app will have limited experience)
+- Install [Webex App](https://www.webex.com/downloads.html) and try to join from PC (mobile app will have limited experience)
 - Basic understanding of Contact Center, IVR, Call Queue
 - Basic Knowledge of Web applications (HTML, Web Hosting, etc.)
 - Though the session is Advanced, there are no prerequisites. Anyone can attend!
