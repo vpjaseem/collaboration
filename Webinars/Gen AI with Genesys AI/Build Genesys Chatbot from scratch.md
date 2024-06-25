@@ -24,7 +24,7 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 - Admin > Contact Center > Queue > Add a Queue > AJ_BANK_CUSTOMER_SUPPORT, Associate wrap-up codes and members to it (Rest everything default)
 
 ### 2. Inbound Message Flow
-- Architect > Inbound Message > AJ_BANK_MESSENGER_01_INBOUND_MESSAGE_FLOW >Start and End Nodes only > Publish
+- Architect > Inbound Message > AJ_BANK_MESGR_01_IN_MSG_FLOW >Start and End Nodes only > Publish
 - Initial State > Start > Send Response > Call Task (TRANSFER_TO_DIGITAL_BOT_FLOW)
 - TRANSFER_TO_DIGITAL_BOT_FLOW > Start > Call Digital Bot Flow > Transfer to ACD
   
@@ -207,7 +207,7 @@ Where is my case at right now?
 ```
 2
 transfer me
-realagent
+real agent
 Start a chat with an agent.
 Connect me to a chat agent.
 Let me chat with a representative.
@@ -230,7 +230,8 @@ I want to chat with a live person.
 - No  > Update Data (clear the data) > Communicate > Jump to Reusable Task > CASE_STATUS_TASK
 - Yes > Call Data Action > GET_RECENT_CASE_BY_NUMBER >
 
-- Success > Decision (Task.CaseId != "UNKNOWN") > Yes > Communicate > "Your Existing case number is" 
+- Success > Decision (Task.CaseId != "UNKNOWN") > Yes > Communicate > "Your Existing case number is" > Call Data Action (GET_CASE_COMMENT_BY_CASE_ID) > Success > Decision (Task.CommentBody != "UNKNOWN") > Communicate > "Last Update" > Update Data > Jump to INITIAL_TASK
+- Failure > Transfer
 
 
 - TRANSFER_TO_AGENT_TASK > Start > Transfer to ACD
