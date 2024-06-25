@@ -24,7 +24,7 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 - Admin > Contact Center > Queue > Add a Queue > AJ_BANK_CUSTOMER_SUPPORT, Associate wrap-up codes and members to it (Rest everything default)
 
 ### 2. Inbound Message Flow
-- Architect > Inbound Message > Start and End Nodes only > Publish
+- Architect > Inbound Message > AJ_BANK_MESSENGER_01_INBOUND_MESSAGE_FLOW >Start and End Nodes only > Publish
   
 ### 3. Messenger Configuration
 - Message > Messenger Configuration > New Configuration 
@@ -107,7 +107,7 @@ Note: In production scenarios, make sure you get this from the Salesforce Admini
 - Token will be emailed, note the Token for future use
 
 ### 8. Genesys Integration with Salesforce CRM APIs
-- Integrations > Salesforce Data Actions > Provide apiuser2@ajcollab.com, Password and Security Token
+- Integrations > Salesforce Data Actions > AJ_BANK_SALESFORCE_CRM_INTEGRATION >Provide apiuser2@ajcollab.com, Password and Security Token
 - Activate the integration
 
 ### 9. Salesforce CRM APIs & Genesys Data Action 
