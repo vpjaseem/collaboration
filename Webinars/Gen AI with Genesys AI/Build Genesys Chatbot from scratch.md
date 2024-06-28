@@ -270,7 +270,7 @@ I want to chat with a live person.
 ## Courses offered by AJ Labs
 Below are the Training courses offered by AJ Labs.
 
-1. **Advanced Genesys Cloud Contact Center Training [Live Training]** (Genesys Cloud CX, Advanced Architect Flows, CRM Integrations, APIs, Middleware Development, Genesys AI, Google Dilogflow CX, Advanced Agent Scripting) - [Syllabus]() | Start Date **05/August/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5)
+1. **Advanced Genesys Cloud Contact Center Training [Live Training]** (Genesys Cloud CX, Advanced Architect Flows, CRM Integrations, APIs, Middleware Development, Genesys AI, Google Dilogflow CX, Advanced Agent Scripting) - [Syllabus](https://drive.google.com/file/d/10ZrdHtvt12sWcBwN_uirgiLwXnEL8o-S/view?usp=sharing) | Start Date **05/August/2024** | Join the [WhatsApp Group](https://chat.whatsapp.com/FjXHwk5QnPVCy0Oa2F7bS5)
 
 2. **Advanced Cloud Collaboration [On demand Video Recordings]** (vmware, Windows AD, DNS, Azure, Azure AD, MS Teams, AudioCodes SBC, Direct Routing, Webex, Webex Calling with CUBE) - [Topic Summary](https://drive.google.com/file/d/1ezFuS6ulvLfyg6PQZXBnnH3McsTaqMWH/view?usp=sharing) | [Syllabus](https://drive.google.com/file/d/19zRydHD4n0drATeoFcNbjbfUphrA-IzJ/view?usp=sharing)
 
