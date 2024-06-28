@@ -243,7 +243,7 @@ I want to chat with a live person.
 
 ### 11. Fine-Tune the Genesys AI Bot
 - Settings > Bot Flow, Event Handling
-- Optimization Dashboard > Utternace History
+- Optimization Dashboard > Utterance History
 
 ### 12. Experience the fully functional Other Gen-AI Chatbot
 
@@ -253,7 +253,7 @@ I want to chat with a live person.
 - [AJ Bot 1 Experience](https://ajcollab.com/bot1.html)
 1. Bot designed to Open New Case
 2. Check the case status in ticketing tool (Testing requires a registered number in the ticketing system, as an example you can give +918590101859)
-3. Reseting the debit card pin and Chat with live agent
+3. Resetting the debit card pin and Chat with live agent
 4. Chat with an live agent
 
 #### AJ Bot 2 (With Advanced Authentications)
