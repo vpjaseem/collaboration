@@ -245,7 +245,22 @@ I want to chat with a live person.
 - Settings > Bot Flow, Event Handling
 - Optimization Dashboard > Utternace History
 
-### 12. Experience the fully functional Gen-AI Chatbot
+### 12. Experience the fully functional Other Gen-AI Chatbot
+
+![image](https://github.com/vpjaseem/collaboration/assets/67306692/3660bc55-65b2-4e49-9783-4e0f588a29e6)
+
+#### AJ Bot 1 (Self Service Customer Support)
+- [AJ Bot 1 Experience](https://ajcollab.com/bot1.html)
+1. Bot designed to Open New Case
+2. Check the case status in ticketing tool (Testing requires a registered number in the ticketing system, as an example you can give +918590101859)
+3. Reseting the debit card pin and Chat with live agent
+4. Chat with an live agent
+
+#### AJ Bot 2 (With Advanced Authentications)
+- [AJ Bot 2 Experience](https://ajcollab.com/bot2.html)
+1. Bot designed to Check the case status in ticketing tool after OTP Authentication. Testing requires a registered number in the ticketing system, and OTP will be delivered there only
+2. Chat with an live agent
+3. **Twilio powered OTP Service** - Experience the authentication flow with OTP Service, you can test with your own number
 
 ## About Me
 **Abdul Jaseem**, UC Architect and Corporate Trainer
