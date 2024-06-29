@@ -7,6 +7,10 @@ In this webinar, you'll learn how to leverage the power of **Genesys AI** and **
 <img src="https://github.com/vpjaseem/collaboration/assets/67306692/61781bf1-db76-468c-869c-840b56197cbe" width="50%"  height="50%">
 </p>
 
+## Webinar Recordings:
+- [Part 1](https://youtu.be/F6mbeBygAwU)
+- [Part 2](https://youtu.be/pwTmDr9QiMA)
+
 ## Prerequisites
 - Install [Webex App](https://www.webex.com/downloads.html) and try to join from PC (mobile app will have limited experience)
 - Basic understanding of Contact Center, IVR, Call Queue
