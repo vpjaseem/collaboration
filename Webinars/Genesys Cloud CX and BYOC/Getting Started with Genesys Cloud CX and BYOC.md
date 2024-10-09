@@ -107,6 +107,12 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 # Call Route
 ![4](https://github.com/user-attachments/assets/88a3e485-1781-4263-9f42-e49bd25355e6)
 
+# Deploy AudiCodes SBC in Azure Cloud
+
+# SSL Certificate Configuration in AudioCodes
+
+# Integrate AudiCodes SBC with Genesys Cloud CX and PSTN
+
 # Tesing the IVR
 
 # Configuring Salesforce CRM Integration and Data Action
