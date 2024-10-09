@@ -103,6 +103,8 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 ![3](https://github.com/user-attachments/assets/2da1b081-063a-4f6f-8bf7-4619372e9fbb)
 
 # DID Configuration
+![5](https://github.com/user-attachments/assets/c56369fb-c6bc-4921-bc09-a6764a0f6c76)
+
 
 # Call Route
 ![4](https://github.com/user-attachments/assets/88a3e485-1781-4263-9f42-e49bd25355e6)
@@ -112,6 +114,28 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 # SSL Certificate Configuration in AudioCodes
 
 # Integrate AudiCodes SBC with Genesys Cloud CX and PSTN
+
+| SCOPE   | PARAMETER            | VALUE                           | COMMENTS                                          |
+|---------|----------------------|---------------------------------|---------------------------------------------------|
+| Generic | Primary NTP Server   | 216.239.35.8                    | This is Google NTP Server, you can use any        |
+|         | Secondary NTP Server | time.google.com                 | This is Google NTP Server, you can use any        |
+|         | Secondary DNS        | 8.8.8.8                         | This is Google Public DNS Server, you can use any |
+|         | NAT Public IP        | Public IP of Azure SBC VM       | Get this from your Azure Portal                   |
+| Genesys | IP-PBX Address       | aj-genesys.byoc.usw2.pure.cloud | Genesys Trunk Termination identifier              |
+|         | IP-PBX SIP Domain    | aj-genesys.byoc.usw2.pure.cloud | Genesys Trunk Termination identifier              |
+|         | Keep Alive           | Enabled                         | For OPTIONS Ping status                           |
+|         | Transport Type       | TLS                             | Secure Signaling                                  |
+|         | Destination Port     | 5061                            | Secure SIP (SSIP) Port                            |
+|         | Listening Port       | 5061                            | Secure SIP (SSIP) Port                            |
+|         | Media Protocol       | SRTP                            | Secure Media                                      |
+| Twilio  | SIP Trunk Address    | aj-twilio.pstn.twilio.com       | Twilio Termination SIP URI                        |
+|         | SIP Trunk SIP Domain | aj-twilio.pstn.twilio.com       | Twilio Termination SIP URI                        |
+|         | Keep Alive           | Enabled                         | For OPTIONS Ping status                           |
+|         | Transport Type       | TLS                             | Secure Signaling                                  |
+|         | Destination Port     | 5061                            | Secure SIP (SSIP) Port                            |
+|         | Listening Port       | 5061                            | Secure SIP (SSIP) Port                            |
+|         | Media Protocol       | SRTP                            | Secure Media                                      |
+
 
 # Tesing the IVR
 
