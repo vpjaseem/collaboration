@@ -28,9 +28,11 @@
 ![7](https://github.com/user-attachments/assets/908ca42e-970d-4441-91e5-a50fd594df06)
 
 # Genesys Cloud CX Edge Server
-•	Edge is available as Cloud-based and Premises
-•	The Edge is a cloud-managed device that combines a Media server, SIP registrar, SIP proxy, and call recorder into a single piece of hardware on-premises. 
-•	Phone Trunk and External Trunks talks to Edge Server
-•	In Genesys Cloud CX Voice and BYOC Cloud, the Edge is in AWS, and Genesys fully manage it
-•	Edge servers are grouped to Edge Group and made available to Sites
-•	In a fully cloud solution, the cloud edge group is associated with the core site - PureCloud Voice – AWS, and the rest of the sites share the same
+- Edge is available as Cloud-based and Premises
+- The Edge is a cloud-managed device that combines a Media server, SIP registrar, SIP proxy, and call recorder into a single piece of hardware on-premises.
+- Phone Trunk and External Trunks talks to Edge Server
+- In Genesys Cloud CX Voice and BYOC Cloud, the Edge is in AWS, and Genesys fully manage it
+- Edge servers are grouped to Edge Group and made available to Sites
+- In a fully cloud solution, the cloud edge group is associated with the core site - PureCloud Voice – AWS, and the rest of the sites share the same
+- 
+![image](https://github.com/user-attachments/assets/f9787df8-c3fe-4b7c-893a-ec47c038fa08)
