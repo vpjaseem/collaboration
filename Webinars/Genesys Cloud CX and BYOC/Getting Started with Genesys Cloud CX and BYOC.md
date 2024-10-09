@@ -45,7 +45,7 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 ![6](https://github.com/user-attachments/assets/5765f7ad-c85d-48fa-b2cd-7db2f5e582f9)
 ![7](https://github.com/user-attachments/assets/908ca42e-970d-4441-91e5-a50fd594df06)
 
-# 3. Genesys Cloud CX Edge Server
+# 4. Genesys Cloud CX Edge Server
 - Edge is available as Cloud-based and Premises
 - The Edge is a cloud-managed device that combines a Media server, SIP registrar, SIP proxy, and call recorder into a single piece of hardware on-premises.
 - Phone Trunk and External Trunks talks to Edge Server
@@ -55,29 +55,31 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 - 
 ![image](https://github.com/user-attachments/assets/f9787df8-c3fe-4b7c-893a-ec47c038fa08)
 
-# 4. Understanding Location and Sites
-## 4.1 Location
+# 5. Understanding Location and Sites
+## 5.1 Location
 - A Genesys Cloud CX location is a geographic area of an organization where users are located.
 - For organizations with multiple physical sites, locations are used to configure emergency services (such as E911 in the US), ensuring that emergency calls are routed to the appropriate local authorities.
 - Locations can be used in reporting and analytics to understand the performance and operations of different geographical areas.
 - Location will be displayed under the user profile can easily identify where the user belongs to
 - To create a Site, we should have a Location first
-
-## 4.2 Site
+![Location 1](https://github.com/user-attachments/assets/4f415759-9656-481c-8dd7-9bf93bfc3313)
+## 5.2 Site
 - It is the home of a set of phones and edge devices and defines the Telephony properties (Dial-Plan, Outbound Routes)
 - It has RegEx based dial-plan, Trunk Association, etc.
 - Every site must be associated with one location. An organization can have multiple locations assigned to it in Genesys Cloud CX.
 - In a Fully Cloud Edge Solution, any site that you create obtains Edge details from the core site (PureCloud Voice - AWS)
-
-# Configuring Genesys Location & Sites
-![Location 1](https://github.com/user-attachments/assets/4f415759-9656-481c-8dd7-9bf93bfc3313)
 ![Site 1](https://github.com/user-attachments/assets/bb32bf14-aba0-43c7-aa22-93d834955311)
 
-# Configuring BYOC Trunk
+# 6. Configuring BYOC Trunk
+Trunk interconencts Genesys Cloud with an SBC.
 ![1](https://github.com/user-attachments/assets/4430a059-bc4d-436f-bbb0-762f22667b27)
 ![2](https://github.com/user-attachments/assets/34992916-7dda-41a0-8cdf-148dad89de60)
+**aj-genesys** is the GenesysSIP Termination Identifier
+
 ![3](https://github.com/user-attachments/assets/5b689e65-a96b-4256-9458-afd86f8f97ec)
+The public IP has to be obtained after deploying the SBC. Time being we are adding a temporary IP. After deploying the AudiOCdes SBC, we will have to update it.
 ![4](https://github.com/user-attachments/assets/c644872b-909d-450b-a4e0-93dccca49efb)
+The public IP has to be obtained after deploying the SBC. Time being we are adding a temporary IP. After deploying the AudiOCdes SBC, we will have to update it.
 ![5](https://github.com/user-attachments/assets/5250f4b2-7dd7-495c-baee-0d71a3683711)
 ![6](https://github.com/user-attachments/assets/0675c5b7-a7bc-4e4b-ba39-3b51a50f7f37)
 ![7](https://github.com/user-attachments/assets/4694f976-8667-40d3-a9d6-b40cef5c34b4)
@@ -85,35 +87,39 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 ![9](https://github.com/user-attachments/assets/3894aeea-3ea0-452a-8f99-f314db0e0ed2)
 
 
-# WebRTC Phone Configuration
+# 7. WebRTC Phone Configuration
+For agents to answer the calls, we need WebRETC Phone
 ![1](https://github.com/user-attachments/assets/c21bc71a-597a-4c9c-8b39-890722f13ed7)
 ![2](https://github.com/user-attachments/assets/d7b787e5-554e-497e-8c2b-7927dffd0a95)
 ![3](https://github.com/user-attachments/assets/84123f55-f558-4717-8b72-08d00d84cb64)
 
-# Creating Queue, Wrap-up Codes
+# 8. Creating Queue, Wrap-up Codes
+Call are routed to ACD queues and members will be available in the queue.
 ![1](https://github.com/user-attachments/assets/82cc6648-6dbc-4e70-84af-51cc17c325a4)
 ![2](https://github.com/user-attachments/assets/97bab25f-4721-4d2a-a26a-5947aa40eb40)
 ![3](https://github.com/user-attachments/assets/a3bd7ee2-df5c-49f2-a101-34319678043a)
 ![4](https://github.com/user-attachments/assets/f58c7878-fdc1-4d39-a45f-f53428994220)
 ![5](https://github.com/user-attachments/assets/713fec66-0466-4b10-9e2c-52645c9d1a17)
 
-# Build a Basic Genesys Architect Inbound Call Flow
+# 9. Build a Basic Genesys Architect Inbound Call Flow
+Architect tool is used to develop call flows in Genesys Cloud CX.
 ![1](https://github.com/user-attachments/assets/17cd2a0c-c39a-4091-9f73-988b5b6ab38e)
 ![2](https://github.com/user-attachments/assets/4e364680-9170-4c99-a772-28f93cf23e77)
 ![3](https://github.com/user-attachments/assets/2da1b081-063a-4f6f-8bf7-4619372e9fbb)
 
-# DID Configuration
+# 10. DID Configuration
+Once the SIP Trunk is completed, we need to map the Carrier DID in Genesys Cloud CX
 ![5](https://github.com/user-attachments/assets/c56369fb-c6bc-4921-bc09-a6764a0f6c76)
 
-
-# Call Route
+# 11. Call Route
+Call Route bridges a DID with an IVR Call Flow
 ![4](https://github.com/user-attachments/assets/88a3e485-1781-4263-9f42-e49bd25355e6)
 
-# Deploy AudiCodes SBC in Azure Cloud
+# 12. Deploy AudiCodes SBC in Azure Cloud
 
-# SSL Certificate Configuration in AudioCodes
+# 13. SSL Certificate Configuration in AudioCodes
 
-# Integrate AudiCodes SBC with Genesys Cloud CX and PSTN
+# 14. Integrate AudiCodes SBC with Genesys Cloud CX and PSTN
 
 | SCOPE   | PARAMETER            | VALUE                           | COMMENTS                                          |
 |---------|----------------------|---------------------------------|---------------------------------------------------|
@@ -136,6 +142,7 @@ Join me for an exclusive webinar where we'll dive deep into telephony integratio
 |         | Listening Port       | 5061                            | Secure SIP (SSIP) Port                            |
 |         | Media Protocol       | SRTP                            | Secure Media                                      |
 
+# 15. AudioCodes SBC Configuration Customization
 
 # Tesing the IVR
 
